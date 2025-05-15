@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE x.1 – Administrer les réseaux | Portfolio Omar Chouffai</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+
+  <div id="main-content">
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav>
+          <a href="index.html#ue">← Retour aux UE</a>
+        </nav>
+        <div class="header-controls">
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE x.1 – Administrer les réseaux et l’Internet</h1>
+        <p>Regroupe les SAE centrées sur la cybersécurité, l’hygiène informatique et
+           la mise en place d’architectures réseau.</p>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="container">
+        <div class="grid grid-2">
+
+          <!--SAE1.01 ------------------------------------------------>
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.01 – Sensibilisation à l’hygiène informatique</h3>
+            <p class="small">Compétence : Hygiène Informatique &amp; Cybersécurité</p>
+
+            <h4>Description</h4>
+            <p>Découverte des principales menaces, bonnes pratiques et outils de vérification
+               pour maintenir un environnement numérique sécurisé.</p>
+
+            <h4>Preuves et traces</h4>
+            <ul>
+              <li>Vidéo de présentation&nbsp;: <a href="https://www.youtube.com/watch?v=oCYMneu5Gtc" target="_blank">YouTube</a></li>
+              <li>Exemple de pratique&nbsp;: authentification d’un site HTTPS
+                  (cadenas, certificat, alertes navigateur).</li>
+              <li><img src="images/sae101_https.png" alt="Validation certificat HTTPS" class="card-image"></li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Acquis : compréhension des menaces, réflexes d’hygiène informatique,
+               vérification d’authenticité des sites.<br>
+               Utilité directe en R&amp;T : participation à la sécurité des SI et des données.</p>
+          </div>
+
+          <!--SAE1.02 ------------------------------------------------>
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.02 – S’initier aux réseaux informatiques</h3>
+            <p class="small">Compétence : Réseaux informatiques</p>
+
+            <h4>Description</h4>
+            <p>Mise en place d’un laboratoire virtuel EVE-NG : configuration de routeur
+               &amp; switch Cisco, VLANs, adressage IP.</p>
+
+            <h4>Preuves et traces</h4>
+            <ul>
+              <li>Capture EVE-NG&nbsp;: topologie + configs.</li>
+              <li><img src="images/sae102_lab.png" alt="Lab EVE-NG" class="card-image"></li>
+              <li>Table des adresses IP.</li>
+              <li><img src="images/sae102_tables.png" alt="Lab EVE-NG" class="card-image"></li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Acquis : configuration de routeurs/commutateurs, segmentation par VLAN,
+               prise en main d’EVE-NG pour des maquettes réseau.</p>
+          </div>
+
+          <!--SAE2.05 ----------------------------------------------->
+          <div class="card no-tilt reveal">
+            <h3>SAE2.05 – Portfolio &amp; poster d’activité</h3>
+            <p class="small">Compétence : Présentation de projet</p>
+
+            <h4>Description</h4>
+            <p>Création d’un poster + document réflexif sur un robot d’aide aux
+               personnes à mobilité réduite (lycée).</p>
+
+            <h4>Preuves et traces</h4>
+            <ul>
+              <li>Poster PDF (lien)&nbsp;: <a href="docs/poster_sae205.pdf" target="_blank">télécharger</a></li>
+              <li>Captures : robot, câblage moteurs, Raspberry Pi ↔ Arduino.</li>
+              <li><img src="images/sae205_robot1.png" alt="Robot PMR" class="card-image">
+              </li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Acquis : programmation moteurs (Arduino), interfaçage Raspberry Pi,
+               gestion de projet &amp; communication technique.</p>
+          </div>
+
+          <!--SAE3.Cyber.03 ----------------------------------------->
+          <div class="card no-tilt reveal">
+            <h3>SAE3.Cyber.03 – Réseau multi-sites sécurisé</h3>
+            <p class="small">Compétence : Conception d’architecture sécurisée</p>
+
+            <p><em>Page en cours de préparation …</em></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

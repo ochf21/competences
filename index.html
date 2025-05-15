@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Omar Chouffai</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="loader-screen">
+    <div class="terminal-loader">
+      <div class="terminal-header">
+        <div class="terminal-title">Status</div>
+        <div class="terminal-controls">
+          <div class="control close"></div>
+          <div class="control minimize"></div>
+          <div class="control maximize"></div>
+        </div>
+      </div>
+      <div class="text">Loading...</div>
+    </div>
+  </div>
+
+  <div id="main-content" class="hidden">
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+
+        <nav>
+          <a href="#competences">Compétences</a>
+          <a href="#parcours">Parcours &amp; CV</a>
+          <a href="#ue">UE &amp; SAE</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-controls">
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox" />
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero reveal">
+      <div class="container">
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <p>Je me présente, je m'appelle Omar. Je suis étudiant en BUT Réseaux et Télécommunication. Je suis ici pour partager mon parcours académique et professionnel, ainsi que mes projets et compétences développées tout au long de mon cursus.
+
+          Ce portfolio est conçu pour mettre en avant mes compétences et réalisations dans le domaine des réseaux et télécommunications. Vous y trouverez des exemples de projets auxquels j'ai participé, des certifications obtenues, et des expériences professionnelles qui ont enrichi mon parcours.
+          
+          Merci de votre visite, et n'hésitez pas à explorer les différentes sections pour en savoir plus sur mon profil et mes compétences. Bonne visite !</p>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="competences" class="reveal">
+      <div class="container">
+        <h2>Compétences &amp; Expérience</h2>
+        <div class="grid grid-2">
+          <div class="card reveal">
+            <h3>Administration Réseau</h3>
+            <p>Déployé et administré des infrastructures campus et opérateurs (DSL, fibre, cuivre).</p>
+            <ul>
+              <li>Serveurs DNS (BIND9) &amp; DHCP</li>
+              <li>Routeurs Cisco : OSPF, BGP, MPLS, VPN</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Programmation Systèmes</h3>
+            <p>Applications distribuées &amp; multithreadées en Python, C &amp; Java.</p>
+            <ul>
+              <li>SAE3.02 : Master/Worker distribué</li>
+              <li>GUI : PyQt6, Tkinter</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Sécurité &amp; Pentest</h3>
+            <p>Audits d’intrusion et exploitation avancée.</p>
+            <ul>
+              <li>OSINT, Nmap, Metasploit, BurpSuite, Hashcat</li>
+              <li>Phishing, bruteforce, injections SQL</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Services Réseaux Avancés</h3>
+            <p>DNSSEC, DoH/DoT &amp; VPN MPLS site-à-site.</p>
+            <ul>
+              <li>DNSSEC &amp; chiffrement DoH</li>
+              <li>VPN MPLS : VRF, MP-BGP, labels</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Gestion de Projet &amp; Documentation</h3>
+            <p>Pilotage, rapports &amp; supports collaboratifs.</p>
+            <ul>
+              <li>Rapport &amp; Vidéo SAE3.02</li>
+              <li>Outils : GitBook, Mahara, Notion</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <h3>Stage Réseaux &amp; Télécom (Adista)</h3>
+            <p>2&nbsp;mois chez Adista (infrastructure).</p>
+            <ul>
+              <li>Routeurs d’entreprise : ProxyARP, BGP, HSRP</li>
+              <li>FTTH/fibre, firewalls Fortinet</li>
+              <li>RADIUS, TACACS &amp; supervision</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parcours & CV -->
+    <section id="parcours" class="reveal">
+      <div class="container">
+        <h2>Parcours &amp; CV</h2>
+        <div class="grid grid-2">
+          <div class="card reveal">
+            <h3>Curriculum Vitae – Français</h3>
+            <p><a href="docs/CHOUFFAI Omar FR.pdf" target="_blank" rel="noopener">Voir mon CV (FR)</a></p>
+          </div>
+          <div class="card reveal">
+            <h3>Curriculum Vitae – English</h3>
+            <p><a href="docs/CHOUFFAI Omar EN.pdf" target="_blank" rel="noopener">Look at my CV (EN)</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ue" class="reveal">
+      <div class="container">
+        <h2>Unités d’enseignement &amp; Projets SAE</h2>
+        <div class="grid grid-3">
+          <!-- UE x.1 -->
+          <a href="ue-x1.html" class="card reveal">
+            <h3>UE&nbsp;x.1&nbsp;[Administrer]</h3>
+            <p>Administrer les réseaux et l’Internet</p>
+            <ul>
+              <li>SAÉ1.01 Sensibilisation à l’hygiène informatique</li>
+              <li>SAÉ1.02 S’initier aux réseaux informatiques</li>
+              <li>SAE2.05 Portfolio</li>
+              <li>SAE3.Cyber.03&nbsp;– Réseau multi-sites sécurisé</li>
+            </ul>
+          </a>
+
+          <!-- UE x.2 -->
+          <a href="ue-x2.html" class="card reveal">
+            <h3>UE&nbsp;x.2&nbsp;[Connecter]</h3>
+            <p>Connecter les entreprises et les usagers</p>
+            <ul>
+              <li>SAÉ1.03 Découvrir un dispositif de transmission</li>
+              <li>SAE2.02 Mesurer &amp; caractériser un signal</li>
+              <li>SAE3.01&nbsp;– Système de transmission</li>
+            </ul>
+          </a>
+
+          <!-- UE x.3 -->
+          <a href="ue-x3.html" class="card reveal">
+            <h3>UE&nbsp;x.3&nbsp;[Programmer]</h3>
+            <p>Créer des outils et applis pour les R&amp;T</p>
+            <ul>
+              <li>SAÉ1.04 Se présenter sur Internet</li>
+              <li>SAÉ1.05 Traiter des données</li>
+              <li>SAÉ2.04 Projet intégratif</li>
+              <li>SAE3.02&nbsp;– Apps communicantes</li>
+            </ul>
+          </a>
+
+          <!-- UE3.Cyber.4 -->
+          <a href="ue-cyber4.html" class="card reveal">
+            <h3>UE3.Cyber.4&nbsp;[Sécuriser]</h3>
+            <p>Admin&nbsp;d’un SI sécurisé</p>
+            <ul>
+              <li>SAE3.Cyber.04&nbsp;– Découvrir le pentesting</li>
+            </ul>
+          </a>
+
+          <!-- UE3.Cyber.5 -->
+          <a href="ue-cyber5.html" class="card reveal">
+            <h3>UE3.Cyber.5&nbsp;[Surveiller]</h3>
+            <p>Surveiller un SI sécurisé</p>
+            <ul>
+              <li>SAE3.Cyber.04&nbsp;– Découvrir le pentesting</li>
+            </ul>
+          </a>
+
+          <!-- Documents numériques -->
+          <a href="documents.html" class="card reveal">
+            <h3>Documents numériques</h3>
+            <ul>
+              <li>Format numérique du bac</li>
+              <li>Relevé de notes S1</li>
+              <li>Relevé de notes S2</li>
+              <li>Relevé de notes S3</li>
+            </ul>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="reveal">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email&nbsp;: <a href="mailto:omar.chf21@gmail.com">omar.chf21@gmail.com</a></p>
+        <p>LinkedIn&nbsp;: <a href="https://linkedin.com/in/omar-chf/" target="_blank" rel="noopener">linkedin.com/in/omar-chf/</a></p>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
