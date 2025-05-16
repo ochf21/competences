@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE3.Cyber.5 – Monitor an IS | Omar Chouffai</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script>
+    /* keep dark mode before paint */
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <!-- HEADER -->
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav><a href="index-en.html#ue">← Back to Modules</a></nav>
+        <div class="header-controls">
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span><span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <div class="lang-switch-container">
+            <input type="checkbox" id="lang-checkbox" checked>
+            <label for="lang-checkbox" class="lang-label">
+              <span class="flag-fr">🇫🇷</span><span class="flag-en">🇬🇧</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE3.Cyber.5 – Monitor an Information System</h1>
+        <p>Same pentest exercises as UE 3.Cyber.4, but reused to build
+           monitoring &amp; detection skills.</p>
+      </div>
+    </section>
+
+    <!-- CARD -->
+    <section class="reveal">
+      <div class="container">
+        <div class="card no-tilt reveal">
+          <h3>SAE3.Cyber.04 – Discover Pentesting</h3>
+
+          <h4>Context</h4>
+          <p>Root&nbsp;Me challenges provide realistic attack scenarios that help
+             define detection rules for an IDS / SIEM.</p>
+
+          <h4>Activities</h4>
+          <ul>
+            <li>26 challenges (web-client, web-server, network, crypto).</li>
+            <li>Captured traffic to craft Suricata rules for detected attacks.</li>
+          </ul>
+
+          <h4>Achievements</h4>
+          <ul>
+            <li>Root Me Academic score&nbsp;: <strong>1 470 pts – 3rd place</strong>.</li>
+            <li>Draft IDS rule-set for scans, brute-force and SQLi patterns.</li>
+          </ul>
+
+          <img src="images/rootme-academique.png" alt="Root Me score"
+               class="card-image">
+
+          <h4>Skills gained</h4>
+          <ul>
+            <li>Vulnerability detection methodology.</li>
+            <li>Basic IDS signature writing (Suricata).</li>
+            <li>Reporting &amp; mitigation plan.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE x.2 – Connect Users | Omar Chouffai</title>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- keep dark mode instantly -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <!-- HEADER -->
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav><a href="index-en.html#ue">← Back to Modules</a></nav>
+        <div class="header-controls">
+          <!-- dark/light -->
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <!-- FR/EN -->
+          <div class="lang-switch-container">
+            <input type="checkbox" id="lang-checkbox" checked>
+            <label for="lang-checkbox" class="lang-label">
+              <span class="flag-fr">🇫🇷</span>
+              <span class="flag-en">🇬🇧</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE x.2 – Connect Companies &amp; Users</h1>
+        <p>Hands-on with Wi-Fi transmission devices, signal measurement and a
+           full transmission-system project.</p>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="reveal">
+      <div class="container">
+        <div class="grid grid-2">
+
+          <!-- SAE1.03 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.03 – Discover a Transmission Device</h3>
+            <p class="small">Skill : Wi-Fi cabling &amp; analysis</p>
+
+            <h4>Description</h4>
+            <p>Cabling, PoE measurements, Wi-Fi heat-maps, throughput tests and
+               Packet Tracer simulation.</p>
+
+            <h4>Evidence</h4>
+            <ul>
+              <li>Cabling RJ-45 S/FTP (TIA-568B).<br>
+                  <img src="images/sae103_cablage.jpg" alt="Cabling" class="card-image"></li>
+              <li>PoE on Cisco 2960-24PC-L (370 W total).<br>
+                  <img src="images/sae103_poe.jpg" alt="PoE" class="card-image"></li>
+              <li>Heat-maps : 2.4 GHz vs 5 GHz.<br>
+                  <img src="images/sae103_heatmap24.jpg" class="card-image">
+                  <img src="images/sae103_heatmap5.jpg"  class="card-image"></li>
+              <li>Throughput measurements (SpeedTest / nPerf / JPerf).<br>
+                  <img src="images/sae103_debit.jpg" alt="Throughput" class="card-image"></li>
+              <li>Packet Tracer simulation.<br>
+                  <img src="images/sae103_pkt.jpg" alt="Packet Tracer" class="card-image"></li>
+            </ul>
+
+            <h4>Outcome</h4>
+            <p>Cabling, PoE, Wi-Fi mapping, teamwork for test planning and analysis.</p>
+          </div>
+
+          <!-- SAE2.02 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ2.02 – Measure &amp; Characterise a Signal</h3>
+            <p class="small">Skill : Signal metrology (Arduino &amp; FFT)</p>
+
+            <h4>Description</h4>
+            <p>Audio acquisition on Arduino UNO (Tinkercad), FFT to recognise
+               notes, and simple transmission experiments.</p>
+
+            <h4>Evidence</h4>
+            <ul>
+              <li>Demo video : <a href="https://youtu.be/XXXXXXXX" target="_blank">YouTube</a></li>
+              <li>20 Hz sine wave, 1–4 V.<br>
+                  <img src="images/sae202_signal.jpg" alt="Signal" class="card-image"></li>
+              <li>FFT — 440 Hz (A4).<br>
+                  <img src="images/sae202_fft.jpg" alt="FFT" class="card-image"></li>
+              <li>Tinkercad wiring.<br>
+                  <img src="images/sae202_schema.jpg" alt="Tinkercad" class="card-image"></li>
+            </ul>
+
+            <h4>Outcome</h4>
+            <p>Analog capture, FFT, collaboration to integrate hardware and DSP.</p>
+          </div>
+
+          <!-- SAE3.01 (placeholder) -->
+          <div class="card no-tilt reveal">
+            <h3>SAE3.01 – Transmission System</h3>
+            <p class="small"><em>Summary coming soon…</em></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
+      </div>
+    </footer>
+  </div><!-- /main-content -->
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE x.1 – Administer Networks | Omar Chouffai</title>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- tiny script: keep dark-mode instantly -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <!-- HEADER -->
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav><a href="index-en.html#ue">← Back to Modules</a></nav>
+        <div class="header-controls">
+          <!-- dark / light -->
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <!-- FR / EN -->
+          <div class="lang-switch-container">
+            <input type="checkbox" id="lang-checkbox" checked>
+            <label for="lang-checkbox" class="lang-label">
+              <span class="flag-fr">🇫🇷</span>
+              <span class="flag-en">🇬🇧</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE x.1 – Administer Networks &amp; the Internet</h1>
+        <p>SAE projects focused on cybersecurity hygiene, basic networking and
+           secure multi-site design.</p>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="reveal">
+      <div class="container">
+        <div class="grid grid-2">
+          <!-- SAE1.01 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.01 – IT Hygiene Awareness</h3>
+            <p class="small">Skill : Cyber-hygiene</p>
+
+            <h4>Description</h4>
+            <p>Good practices against common threats, validating HTTPS sites,
+               analysing certificates.</p>
+
+            <h4>Evidence</h4>
+            <ul>
+              <li>Project video : <a href="https://www.youtube.com/watch?v=oCYMneu5Gtc" target="_blank">YouTube</a></li>
+              <li>Example : certificate details of a genuine website.</li>
+              <li><img src="images/sae101_https.png" alt="HTTPS certificate" class="card-image"></li>
+            </ul>
+
+            <h4>Outcome</h4>
+            <p>Threat awareness, daily cyber-hygiene reflexes, certificate checks.</p>
+          </div>
+
+          <!-- SAE1.02 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.02 – Intro to Networking</h3>
+            <p class="small">Skill : Basic network configuration</p>
+
+            <h4>Description</h4>
+            <p>Virtual lab in EVE-NG : router, switch, VLAN segmentation.</p>
+
+            <h4>Evidence</h4>
+            <ul>
+              <li>Lab topology screenshot.</li>
+              <li><img src="images/sae102_lab.png" alt="EVE-NG lab" class="card-image"></li>
+              <li>IP address table screenshot.</li>
+            </ul>
+
+            <h4>Outcome</h4>
+            <p>Router &amp; switch setup, VLANs, hands-on with EVE-NG.</p>
+          </div>
+
+          <!-- SAE2.05 -->
+          <div class="card no-tilt reveal">
+            <h3>SAE2.05 – Portfolio &amp; Poster</h3>
+            <p class="small">Skill : Project presentation</p>
+
+            <h4>Description</h4>
+            <p>Poster + reflective document about a robot aiding people with reduced mobility.</p>
+
+            <h4>Evidence</h4>
+            <ul>
+              <li>Poster screenshot.</li>
+              <li><img src="images/sae205_robot1.png" alt="Robot project" class="card-image"></li>
+              <li><img src="images/sae205_robot2.png" alt="Motors wiring" class="card-image"></li>
+            </ul>
+
+            <h4>Outcome</h4>
+            <p>Motor programming (Arduino), Pi–Arduino link, project communication.</p>
+          </div>
+
+          <!-- SAE3.Cyber.03 -->
+          <div class="card no-tilt reveal">
+            <h3>SAE3.Cyber.03 – Secure Multi-site Network</h3>
+            <p class="small"><em>Summary to be added…</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
+      </div>
+    </footer>
+  </div><!-- /main-content -->
+
+  <!-- Scripts (shared) -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

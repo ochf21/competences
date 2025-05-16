@@ -2,6 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <script>
+  (function () {
+    try {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UE3.Cyber.5 – Surveiller | Portfolio Omar Chouffai</title>
   <link rel="stylesheet" href="style.css">

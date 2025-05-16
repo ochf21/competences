@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Documents | Omar Chouffai</title>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- keep dark mode before first paint -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <!-- HEADER -->
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav><a href="index-en.html#ue">← Back to Modules</a></nav>
+
+        <div class="header-controls">
+          <!-- dark / light -->
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span><span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <!-- FR / EN -->
+          <div class="lang-switch-container">
+            <input type="checkbox" id="lang-checkbox" checked>
+            <label for="lang-checkbox" class="lang-label">
+              <span class="flag-fr">🇫🇷</span><span class="flag-en">🇬🇧</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div class="container">
+        <h1>Digital Documents</h1>
+        <p>Diplomas, transcripts and certifications available in PDF.</p>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="reveal">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="card no-tilt reveal">
+            <h3>Baccalaureate (digital copy)</h3>
+            <p><img src="images/baccalaureat.png" alt="Schéma Tinkercad" class="card-image"></p>
+          </div>
+
+          <div class="card no-tilt reveal">
+            <h3>Transcript – Semester&nbsp;1</h3>
+            <p><img src="images/releve_S1.png" alt="Schéma Tinkercad" class="card-image"></p>
+          </div>
+
+          <div class="card no-tilt reveal">
+            <h3>Transcript – Semester&nbsp;2</h3>
+            <p><img src="images/releve_S2.png" alt="Schéma Tinkercad" class="card-image"></p>
+          </div>
+
+          <div class="card no-tilt reveal">
+            <h3>Transcript – Semester&nbsp;3</h3>
+            <p><img src="images/releve_S3.png" alt="Schéma Tinkercad" class="card-image"></p>
+          </div>
+
+          <div class="card no-tilt reveal">
+            <h3>SIP Certification – Belledonne</h3>
+            <p><img src="images/certif_sip.png" alt="Schéma Tinkercad" class="card-image"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
+      </div>
+    </footer>
+  </div><!-- /main-content -->
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

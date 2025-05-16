@@ -75,3 +75,38 @@ VanillaTilt.init(document.querySelectorAll('.card'), {
   glare: true,
   'max-glare': 0.2
 });
+
+/* ─────────────  LANGUAGE SWITCH  ───────────── */
+const langChk = document.getElementById('lang-checkbox');
+
+if (langChk) {
+  /* 1)  état initial = langue de la page -------------------- */
+  const enPage = location.pathname.includes('-en.html') ||
+                 location.pathname.endsWith('index-en.html');
+
+  // coche / décoche, applique la classe, mémorise
+  langChk.checked = enPage;
+  document.body.classList.toggle('lang-en', enPage);
+  localStorage.setItem('lang', enPage ? 'en' : 'fr');
+
+  /* 2)  clic utilisateur ------------------------------------ */
+  langChk.addEventListener('change', () => {
+    const en = langChk.checked;
+    document.body.classList.toggle('lang-en', en);
+    localStorage.setItem('lang', en ? 'en' : 'fr');
+
+    const p = location.pathname;
+    if (en && !p.includes('-en')) {
+      const enPath = p.endsWith('index.html')
+        ? p.replace('index.html', 'index-en.html')
+        : p.replace('.html', '-en.html');
+      location.href = enPath;
+
+    } else if (!en && p.includes('-en')) {
+      const frPath = p.endsWith('index-en.html')
+        ? p.replace('index-en.html', 'index.html')
+        : p.replace('-en.html', '.html');
+      location.href = frPath;
+    }
+  });
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE x.3 – Program | Omar Chouffai</title>
+
+  <link rel="stylesheet" href="style.css">
+  <!-- keep dark-mode immediately -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <!-- HEADER -->
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav><a href="index-en.html#ue">← Back to Modules</a></nav>
+        <div class="header-controls">
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <div class="lang-switch-container">
+            <input type="checkbox" id="lang-checkbox" checked>
+            <label for="lang-checkbox" class="lang-label">
+              <span class="flag-fr">🇫🇷</span>
+              <span class="flag-en">🇬🇧</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE x.3 – Program: tools &amp; apps</h1>
+        <p>Digital identity, data processing with Scapy and an integrative
+           multi-service project.</p>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="reveal">
+      <div class="container">
+        <div class="grid grid-2">
+          <!-- SAÉ1.04 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.04 – Online Presence</h3>
+            <p class="small">Skill : digital identity &amp; e-reputation</p>
+
+            <h4>Description</h4>
+            <p>Build a personal page and reflect on your public footprint.</p>
+
+            <h4>Evidence</h4>
+            <ul>
+              <li>Project site :
+                <a href="https://niklasras.github.io/portfolio/" target="_blank">
+                  niklasras.github.io/portfolio</a></li>
+            </ul>
+
+            <h4>Outcome</h4>
+            <p>Identity management, professional web content, reputation care.</p>
+          </div>
+
+          <!-- SAÉ1.05 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.05 – Data Processing</h3>
+            <p class="small">Skill : network scripting with Scapy</p>
+
+            <h4>Project 1 – Host discovery</h4>
+<pre><code class="language-python">from scapy.all import *
+def discover_hosts_active(ip):
+    ans,_ = sr(IP(dst=ip)/ICMP(), timeout=2)
+    for s,r in ans:
+        print(f"{r.src} up")</code></pre>
+
+            <h4>Project 2 – MITM (ARP spoof)</h4>
+<pre><code class="language-python">from scapy.all import *
+def arp_spoof(victim, gw):
+    send(ARP(op=2, pdst=victim, psrc=gw), loop=1, inter=2)</code></pre>
+
+            <p>Demo video : <a href="https://youtu.be/XXXXXXXX" target="_blank">YouTube</a></p>
+
+            <h4>Outcome</h4>
+            <p>Packet crafting, host discovery, MITM basics.</p>
+          </div>
+
+          <!-- SAÉ2.04 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ2.04 – Integrative Project</h3>
+            <p class="small">Skill : LAN + VoIP + MQTT + Web</p>
+
+            <h4>Description</h4>
+            <p>VLAN network, SIP, real-time MQTT, Django/MySQL dashboard.</p>
+
+            <h4>Evidence</h4>
+            <ul>
+              <li><img src="images/sae204_topologie.jpg"  class="card-image" alt="Topology"></li>
+              <li><img src="images/sae204_vlans.jpg"      class="card-image" alt="VLANs"></li>
+              <li><img src="images/sae204_mqtt.jpg"       class="card-image" alt="MQTT"></li>
+            </ul>
+
+            <h4>Outcome</h4>
+            <p>LAN admin, SIP auth, secure MQTT, Django charts.</p>
+          </div>
+
+          <!-- SAÉ3.02 placeholder -->
+          <div class="card no-tilt reveal">
+            <h3>SAE3.02 – Communicating Apps</h3>
+            <p class="small"><em>Summary coming soon…</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
+      </div>
+    </footer>
+  </div><!-- /main-content -->
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

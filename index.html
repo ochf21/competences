@@ -2,6 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  <script>
+  (function () {
+    try {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio Omar Chouffai</title>
   <link rel="stylesheet" href="style.css" />
@@ -25,29 +35,41 @@
   </div>
 
   <div id="main-content" class="hidden">
-    <header>
-      <div class="container nav-open-toggle">
-        <span class="logo">Omar Chouffai</span>
+<header>
+  <div class="container nav-open-toggle">
+    <span class="logo">Omar Chouffai</span>
 
-        <nav>
-          <a href="#competences">Compétences</a>
-          <a href="#parcours">Parcours &amp; CV</a>
-          <a href="#ue">UE &amp; SAE</a>
-          <a href="#contact">Contact</a>
-        </nav>
+    <nav>
+      <a href="#competences">Compétences</a>
+      <a href="#parcours">Parcours &amp; CV</a>
+      <a href="#ue">UE &amp; SAE</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-        <div class="header-controls">
-          <div class="theme-switch-container">
-            <input type="checkbox" id="theme-checkbox" />
-            <label for="theme-checkbox" class="label">
-              <span class="icon-sun">🌞</span>
-              <span class="icon-moon">🌜</span>
-            </label>
-          </div>
-          <span class="nav-toggle">☰</span>
-        </div>
+    <div class="header-controls">
+      <!-- dark/light toggle (unchanged) -->
+      <div class="theme-switch-container">
+        <input type="checkbox" id="theme-checkbox" />
+        <label for="theme-checkbox" class="label">
+          <span class="icon-sun">🌞</span>
+          <span class="icon-moon">🌜</span>
+        </label>
       </div>
-    </header>
+
+      <!-- NEW : language toggle -->
+      <div class="lang-switch-container">
+        <input type="checkbox" id="lang-checkbox">
+        <label for="lang-checkbox" class="lang-label">
+          <span class="flag-fr">🇫🇷</span>
+          <span class="flag-en">🇬🇧</span>
+        </label>
+      </div>
+
+      <span class="nav-toggle">☰</span>
+    </div>
+  </div>
+</header>
+
 
     <section class="hero reveal">
       <div class="container">
@@ -129,7 +151,7 @@
           </div>
           <div class="card reveal">
             <h3>Curriculum Vitae – English</h3>
-            <p><a href="docs/CHOUFFAI Omar EN.pdf" target="_blank" rel="noopener">Look at my CV (EN)</a></p>
+            <p><a href="docs/CHOUFFAI Omar EN.pdf" target="_blank" rel="noopener">Voir mon CV (EN)</a></p>
           </div>
         </div>
       </div>
