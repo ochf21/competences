@@ -6,7 +6,6 @@
   <title>Digital Documents | Omar Chouffai</title>
 
   <link rel="stylesheet" href="style.css">
-  <!-- keep dark mode before first paint -->
   <script>
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
@@ -18,21 +17,18 @@
   <div id="custom-cursor"></div>
 
   <div id="main-content">
-    <!-- HEADER -->
     <header>
       <div class="container nav-open-toggle">
         <span class="logo">Omar Chouffai</span>
         <nav><a href="index-en.html#ue">← Back to Modules</a></nav>
 
         <div class="header-controls">
-          <!-- dark / light -->
           <div class="theme-switch-container">
             <input type="checkbox" id="theme-checkbox">
             <label for="theme-checkbox" class="label">
               <span class="icon-sun">🌞</span><span class="icon-moon">🌜</span>
             </label>
           </div>
-          <!-- FR / EN -->
           <div class="lang-switch-container">
             <input type="checkbox" id="lang-checkbox" checked>
             <label for="lang-checkbox" class="lang-label">
@@ -44,7 +40,6 @@
       </div>
     </header>
 
-    <!-- HERO -->
     <section class="hero reveal">
       <div class="container">
         <h1>Digital Documents</h1>
@@ -52,7 +47,6 @@
       </div>
     </section>
 
-    <!-- CARDS -->
     <section class="reveal">
       <div class="container">
         <div class="grid grid-2">
@@ -84,13 +78,12 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="reveal">
       <div class="container">
         <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
       </div>
     </footer>
-  </div><!-- /main-content -->
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <script src="script.js"></script>

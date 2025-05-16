@@ -33,14 +33,14 @@ const themeCheckbox = document.getElementById('theme-checkbox');
 themeCheckbox.addEventListener('change', () => {
   const isDark = themeCheckbox.checked;
   document.body.classList.toggle('dark', isDark);
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');  // persiste le choix
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');  
   
 });
 /* ─── Restaure le thème stocké ─── */
-const savedTheme = localStorage.getItem('theme');          // "dark" ou "light"
+const savedTheme = localStorage.getItem('theme');         
 if (savedTheme === 'dark') {
   document.body.classList.add('dark');
-  if (themeCheckbox) themeCheckbox.checked = true;         // synchro du toggle
+  if (themeCheckbox) themeCheckbox.checked = true;        
 }
 
 // Custom cursor
@@ -76,20 +76,16 @@ VanillaTilt.init(document.querySelectorAll('.card'), {
   'max-glare': 0.2
 });
 
-/* ─────────────  LANGUAGE SWITCH  ───────────── */
 const langChk = document.getElementById('lang-checkbox');
 
 if (langChk) {
-  /* 1)  état initial = langue de la page -------------------- */
   const enPage = location.pathname.includes('-en.html') ||
                  location.pathname.endsWith('index-en.html');
 
-  // coche / décoche, applique la classe, mémorise
   langChk.checked = enPage;
   document.body.classList.toggle('lang-en', enPage);
   localStorage.setItem('lang', enPage ? 'en' : 'fr');
 
-  /* 2)  clic utilisateur ------------------------------------ */
   langChk.addEventListener('change', () => {
     const en = langChk.checked;
     document.body.classList.toggle('lang-en', en);
