@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+<script>
+(function () {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('dark');
+      var ch = document.getElementById('theme-checkbox');
+      if (ch) ch.checked = true;
+    });
+  }
+})();
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE x.2 – Connecter les entreprises | Portfolio Omar Chouffai</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav>
+          <a href="index.html">← Retour aux UE</a>
+          <a href="ue-x3.html">Prochain UE →</a>
+        </nav>
+        <div class="header-controls">
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE x.2 – Connecter les entreprises&nbsp;et&nbsp;les&nbsp;usagers</h1>
+        <p>Cette UE nous a permis de maîtriser les dispositifs de transmission filaires et sans-fil, de mesurer et caractériser les signaux, puis d’intégrer ces liaisons dans des architectures d’accès fiables – un ensemble aligné sur les composantes essentielles CE2.01 à CE2.05.</p>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="container">
+        <div class="grid grid-2">
+
+          <!-- SAE1.03 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.03 – Découvrir un dispositif de transmission</h3>
+            <p class="small">Compétence : Dispositifs de transmission (Wi-Fi)</p>
+
+            <h4>Description</h4>
+            <p>Étude du câblage, des mesures de puissance PoE, réalisation
+               de heatmaps Wi-Fi, mesures de débit et simulation réseau
+               sous Packet Tracer.</p>
+
+            <h4>Preuves &amp; traces</h4>
+            <ul>
+              <li>Câblage&nbsp;: RJ-45 S/FTP – norme&nbsp;TIA-568B.<br>
+                  <img src="images/sae103_cablage.png" alt="Câblage RJ-45" class="card-image"></li>
+
+              <li>Mesure PoE&nbsp;: Switch Cisco 2960-24PC-L (370 W tot., 154 W/port).<br>
+                  <img src="images/sae103_poe.png" alt="Mesure PoE" class="card-image"></li>
+
+              <li>Heatmaps&nbsp;: 802.11g (2.4 GHz) vs 802.11a (5 GHz).<br>
+                  <img src="images/sae103_heatmap24.png" alt="Heatmap 2.4 GHz" class="card-image">
+                  <img src="images/sae103_heatmap5.png"  alt="Heatmap 5 GHz"  class="card-image"></li>
+
+              <li>Mesures de débit (SpeedTest / nPerf / JPerf).<br>
+                  <img src="images/sae103_debit.png" alt="Mesure de débit" class="card-image"></li>
+
+              <li>Simulation Packet Tracer : serveur DNS, Web, DHCP, AP Wi-Fi.<br>
+                  <img src="images/sae103_pkt.png" alt="Schéma Packet Tracer" class="card-image"></li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Acquis : câblage structuré, mesure PoE, cartographie Wi-Fi,
+               simulation réseau. Importance du travail d’équipe pour la
+               planification des tests et l’analyse des résultats.</p>
+          </div>
+
+          <!-- SAE2.02 -->
+          <div class="card no-tilt reveal">
+            <h3>SAE2.02 – Mesurer et caractériser un signal ou un système</h3>
+            <p class="small">Compétence : Métrologie des signaux</p>
+
+            <h4>Description</h4>
+            <p>Acquisition de signaux audio avec Arduino UNO (Tinkercad),
+               analyse FFT pour la reconnaissance de notes, transmission
+               des données.</p>
+
+            <h4>Preuves &amp; traces</h4>
+            <ul>
+              <li>Simulation Tinkercad – schéma câblage.<br>
+                  <img src="images/sae202_schema.png" alt="Schéma Tinkercad" class="card-image"></li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Acquis : mesure analogique, FFT sur Arduino, travail en équipe
+               pour intégrer matériel et traitement numérique.</p>
+          </div>
+
+          <!-- SAE3.01 -->
+          <div class="card no-tilt reveal">
+            <h3>SAE3.01 – Système de transmission</h3>
+            <p class="small"><em>Page en cours de préparation…</em></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+

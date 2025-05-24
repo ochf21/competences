@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<script>
+(function () {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('dark');
+      var ch = document.getElementById('theme-checkbox');
+      if (ch) ch.checked = true;
+    });
+  }
+})();
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Omar Chouffai Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="loader-screen">
+    <div class="terminal-loader">
+      <div class="terminal-header">
+        <div class="terminal-title">Status</div>
+        <div class="terminal-controls">
+          <div class="control close"></div>
+          <div class="control minimize"></div>
+          <div class="control maximize"></div>
+        </div>
+      </div>
+      <div class="text">Loading...</div>
+    </div>
+  </div>
+
+  <div id="main-content" class="hidden">
+<header>
+  <div class="container nav-open-toggle">
+    <span class="logo">Omar Chouffai</span>
+
+    <nav>
+      <a href="#competences">Skills</a>
+      <a href="#parcours">Resume</a>
+      <a href="#ue">Modules&nbsp;&amp;&nbsp;SAE</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-controls">
+      <div class="theme-switch-container">
+        <input type="checkbox" id="theme-checkbox" />
+        <label for="theme-checkbox" class="label">
+          <span class="icon-sun">🌞</span>
+          <span class="icon-moon">🌜</span>
+        </label>
+      </div>
+
+      <div class="lang-switch-container">
+        <input type="checkbox" id="lang-checkbox" checked />
+        <label for="lang-checkbox" class="lang-label">
+          <span class="flag-fr">🇫🇷</span>
+          <span class="flag-en">🇬🇧</span>
+        </label>
+      </div>
+
+      <span class="nav-toggle">☰</span>
+    </div>
+  </div>
+</header>
+
+    <section class="hero reveal">
+      <div class="container">
+        <h1>Welcome to my Portfolio</h1>
+        <p>Hi, I’m Omar, a Network&nbsp;&amp;&nbsp;Telecom student.  
+           Here you’ll find my academic and professional journey, key
+           projects and the skills I’ve built along the way.  
+           Feel free to explore each section to learn more about my profile.</p>
+      </div>
+    </section>
+
+    <section id="competences" class="reveal">
+      <div class="container">
+        <h2>Skills&nbsp;&amp;&nbsp;Experience</h2>
+        <div class="grid grid-2">
+          <div class="card no-tilt reveal">
+            <h3>Network Administration</h3>
+            <p>Deployed and managed campus and operator infrastructures (DSL, fibre, copper).</p>
+            <ul>
+              <li>DNS (BIND9) &amp; DHCP servers</li>
+              <li>Cisco routing : OSPF, BGP, MPLS, VPN</li>
+            </ul>
+          </div>
+          <div class="card no-tilt reveal">
+            <h3>Systems Programming</h3>
+            <p>Distributed &amp; multithreaded apps in Python, C and Java.</p>
+            <ul>
+              <li>SAE3.02 : Master/Worker distributed engine</li>
+              <li>GUI with PyQt6, Tkinter</li>
+            </ul>
+          </div>
+          <div class="card no-tilt reveal">
+            <h3>Security &amp; Pentest</h3>
+            <p>Intrusion tests and advanced exploitation.</p>
+            <ul>
+              <li>OSINT, Nmap, Metasploit, BurpSuite, Hashcat</li>
+              <li>Phishing, brute-force, SQL injections</li>
+            </ul>
+          </div>
+          <div class="card no-tilt reveal">
+            <h3>Advanced Network Services</h3>
+            <p>DNSSEC, DoH/DoT and site-to-site MPLS VPN.</p>
+            <ul>
+              <li>Secure DNS with DNSSEC &amp; DoH</li>
+              <li>MPLS : VRF, MP-BGP, labels</li>
+            </ul>
+          </div>
+          <div class="card no-tilt reveal">
+            <h3>Project Management &amp; Docs</h3>
+            <p>Reporting, collaborative tools, video editing.</p>
+            <ul>
+              <li>SAE3.02 report &amp; demo video</li>
+              <li>Tools : GitBook, Mahara, Notion</li>
+            </ul>
+          </div>
+          <div class="card no-tilt reveal">
+            <h3>Internship – Adista</h3>
+            <p>2-month placement on enterprise infrastructure.</p>
+            <ul>
+              <li>Routers : Proxy-ARP, BGP, HSRP</li>
+              <li>FTTH, Fortinet firewalls</li>
+              <li>RADIUS, TACACS, monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="parcours" class="reveal">
+      <div class="container">
+        <h2>Resume</h2>
+        <div class="grid grid-2">
+          <div class="card no-tilt reveal">
+            <h3>Curriculum Vitae – English</h3>
+            <p><a href="docs/CHOUFFAI Omar EN.pdf" target="_blank" rel="noopener">Look at my CV (FR)</a></p>
+          </div>
+          <div class="card no-tilt reveal">
+            <h3>Curriculum Vitae – French</h3>
+            <p><a href="docs/CHOUFFAI Omar FR.pdf" target="_blank" rel="noopener">Look at my CV (EN)</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section id="ue" class="reveal">
+      <div class="container">
+        <h2>Modules&nbsp;&amp;&nbsp;SAE Projects</h2>
+        <div class="grid grid-3">
+          <a href="ue-x1-en.html" class="card reveal">
+            <h3>UE&nbsp;x.1 [Admin]</h3>
+            <p>Administer networks &amp; the Internet</p>
+            <ul>
+              <li>SAÉ1.01 IT hygiene awareness</li>
+              <li>SAÉ1.02 Intro to networking</li>
+              <li>SAE2.05 Portfolio</li>
+              <li>SAE3.Cyber.03 secure multisite network</li>
+            </ul>
+          </a>
+
+          <a href="ue-x2-en.html" class="card reveal">
+            <h3>UE&nbsp;x.2 [Connect]</h3>
+            <p>Connect companies &amp; users</p>
+            <ul>
+              <li>SAÉ1.03 Discover a transmission device</li>
+              <li>SAE2.02 Measure &amp; characterise a signal</li>
+              <li>SAE3.01 Transmission system</li>
+            </ul>
+          </a>
+
+          <a href="ue-x3-en.html" class="card reveal">
+            <h3>UE&nbsp;x.3 [Program]</h3>
+            <p>Create tools &amp; apps for N&amp;T</p>
+            <ul>
+              <li>SAÉ1.04 Online presence</li>
+              <li>SAÉ1.05 Data processing</li>
+              <li>SAÉ2.04 Integrative project</li>
+              <li>SAE3.02 Communicating apps</li>
+            </ul>
+          </a>
+
+          <a href="ue-cyber4-en.html" class="card reveal">
+            <h3>UE3.Cyber.4 [Secure]</h3>
+            <p>Secure an information system</p>
+            <ul><li>SAE3.Cyber.04 – Pentest basics</li></ul>
+          </a>
+
+          <a href="ue-cyber5-en.html" class="card reveal">
+            <h3>UE3.Cyber.5 [Monitor]</h3>
+            <p>Monitor an information system</p>
+            <ul><li>SAE3.Cyber.04 – Pentest overview</li></ul>
+          </a>
+
+          <a href="documents-en.html" class="card reveal">
+            <h3>Digital documents</h3>
+            <ul>
+              <li>Baccalaureate</li>
+              <li>Transcript S1</li>
+              <li>Transcript S2</li>
+              <li>Transcript S3</li>
+              <li>SIP Certification</li>
+            </ul>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email&nbsp;: <a href="mailto:omar.chf21@gmail.com">omar.chf21@gmail.com</a></p>
+        <p>LinkedIn&nbsp;: <a href="https://linkedin.com/in/omar-chf/" target="_blank" rel="noopener">linkedin.com/in/omar-chf</a></p>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
