@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+<script>
+(function () {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('dark');
+      var ch = document.getElementById('theme-checkbox');
+      if (ch) ch.checked = true;
+    });
+  }
+})();
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE3.Cyber.4 – Sécuriser | Portfolio Omar Chouffai</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav>
+          <a href="index.html">← Retour aux UE</a>
+          <a href="ue-cyber5.html">Prochain UE →</a>
+        </nav>
+        <div class="header-controls">
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE3.Cyber.4 – Sécuriser un SI</h1>
+        <p>Cette UE nous a formés à détecter, analyser et corriger les vulnérabilités : élaboration de scénarios d’intrusion, application de contre-mesures, rédaction de rapports d’audit ; l’ensemble s’appuie sur les composantes essentielles CE4.01 à CE4.05.</p>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="container">
+        <div class="card no-tilt reveal">
+          <h3>SAE3.Cyber.04 – Découvrir le pentesting</h3>
+
+          <h4>Objectifs</h4>
+          <ul>
+            <li>Comprendre la démarche d’audit d’intrusion&nbsp;: reconnaissance,
+                exploitation, post-exploitation.</li>
+            <li>Se familiariser avec les outils de base (nmap, hydra, gobuster,
+                Burp Suite, metasploit).</li>
+          </ul>
+
+          <h4>Déroulement</h4>
+          <p>Pendant la SAE, nous avons réalisé&nbsp;:</p>
+          <ul>
+            <li>💡 <strong>26 challenges Root Me</strong> (web, réseau, crypto)
+                pour consolider la méthodologie.</li>
+            <li>🛠️ ateliers guidés&nbsp;: scan réseau, brute-force HTTP,
+                xss &amp; injections SQL.</li>
+          </ul>
+
+          <h4>Résultat</h4>
+          <p>3ᵉ place au classement Root Me Académique : <strong>1 470 pts</strong>.</p>
+          <img src="images/rootme-academique.png" alt="Score Root Me" class="card-image">
+
+          <h4>Compétences acquises</h4>
+          <ul>
+            <li>Collecte d’informations et cartographie d’un SI.</li>
+            <li>Exploitation de failles courantes (OWASP Top 10).</li>
+            <li>Rédaction de comptes-rendus d’audit et recommandations.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+

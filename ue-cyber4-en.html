@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+  (function () {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      window.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('dark');
+        var ch = document.getElementById('theme-checkbox');
+        if (ch) ch.checked = true;
+      });
+    }
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE3.Cyber.4 – Secure an IS | Omar Chouffai</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav>
+          <a href="index-en.html">← Back to Modules</a>
+          <a href="ue-cyber5-en.html">Next Module →</a>
+        </nav>
+        <div class="header-controls">
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE3.Cyber.4 – Secure an Information System</h1>
+        <p>
+          This module trained us to detect, analyze, and remediate vulnerabilities: creating intrusion scenarios, applying countermeasures, and writing audit reports; all based on core components CE4.01 to CE4.05.
+        </p>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="container">
+        <div class="card no-tilt reveal">
+          <h3>SAE3.Cyber.04 – Discover Pentesting</h3>
+
+          <h4>Objectives</h4>
+          <ul>
+            <li>Understand the process of intrusion auditing: reconnaissance, exploitation, post-exploitation.</li>
+            <li>Get familiar with core tools (nmap, hydra, gobuster, Burp Suite, metasploit).</li>
+          </ul>
+
+          <h4>Activities</h4>
+          <p>During the SAE, we completed:</p>
+          <ul>
+            <li>💡 <strong>26 Root Me challenges</strong> (web, network, crypto) to strengthen our methodology.</li>
+            <li>🛠️ Guided labs: network scan, HTTP brute-force, XSS &amp; SQL injections.</li>
+          </ul>
+
+          <h4>Result</h4>
+          <p>3rd place on the Root Me Academic ranking: <strong>1,470 pts</strong>.</p>
+          <img src="images/rootme-academique.png" alt="Root Me Score" class="card-image">
+
+          <h4>Skills Gained</h4>
+          <ul>
+            <li>Information gathering and mapping an information system.</li>
+            <li>Exploiting common vulnerabilities (OWASP Top 10).</li>
+            <li>Writing audit reports and recommendations.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

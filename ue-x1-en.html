@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+  (function () {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      window.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('dark');
+        var ch = document.getElementById('theme-checkbox');
+        if (ch) ch.checked = true;
+      });
+    }
+  })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE x.1 – Administer Networks | Omar Chouffai</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav>
+          <a href="index-en.html">← Back to Modules</a>
+          <a href="ue-x2-en.html">Next Module →</a>
+        </nav>
+        <div class="header-controls">
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE x.1 – Administer Networks and the Internet</h1>
+        <p>
+          In this module, we learned to <strong>choose appropriate network solutions and technologies</strong>,
+          <strong>configure, troubleshoot, and secure</strong> infrastructure, <strong>document our actions</strong>,
+          and conduct ongoing <strong>technological watch</strong>, following the essential components CE1.01 to CE1.05.
+        </p>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="container">
+        <div class="grid grid-2">
+
+          <!-- SAE1.01 ------------------------------------------------>
+          <div class="card no-tilt reveal">
+            <h3>SAE1.01 – IT Hygiene Awareness</h3>
+            <p class="small">Skill: IT Hygiene &amp; Cybersecurity</p>
+
+            <h4>Description</h4>
+            <p>Discovering major threats, best practices, and verification tools to keep a digital environment secure.</p>
+
+            <h4>Evidence</h4>
+            <ul>
+              <li>Presentation video: <a href="https://www.youtube.com/watch?v=oCYMneu5Gtc" target="_blank">YouTube</a></li>
+              <li>Example: authenticating an HTTPS site (padlock, certificate, browser warnings).</li>
+              <li><img src="images/sae101_https.png" alt="HTTPS Certificate Validation" class="card-image"></li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Gained: understanding threats, daily IT hygiene reflexes, checking site authenticity.<br>
+               Direct value in N&amp;T: contributing to IS and data security.</p>
+          </div>
+
+          <!-- SAE1.02 ------------------------------------------------>
+          <div class="card no-tilt reveal">
+            <h3>SAE1.02 – Introduction to Networking</h3>
+            <p class="small">Skill: Networking</p>
+
+            <h4>Description</h4>
+            <p>Setting up a virtual lab (EVE-NG): configuring Cisco router &amp; switch, VLANs, IP addressing.</p>
+
+            <h4>Evidence</h4>
+            <ul>
+              <li>EVE-NG screenshot: topology + configs.</li>
+              <li><img src="images/sae102_lab.png" alt="EVE-NG Lab" class="card-image"></li>
+              <li>IP address table.</li>
+              <li><img src="images/sae102_tables.png" alt="EVE-NG Lab" class="card-image"></li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Gained: router/switch configuration, VLAN segmentation, hands-on with EVE-NG for network models.</p>
+          </div>
+
+          <!-- SAE2.05 ----------------------------------------------->
+          <div class="card no-tilt reveal">
+            <h3>SAE2.05 – Portfolio &amp; Activity Poster</h3>
+            <p class="small">Skill: Project Presentation</p>
+
+            <h4>Description</h4>
+            <p>Created a poster + reflective document about a robot assisting people with reduced mobility (high school).</p>
+
+            <h4>Evidence</h4>
+            <ul>
+              <li>Screenshots: robot, motor wiring, Raspberry Pi ↔ Arduino.</li>
+              <li><img src="images/sae205_robot1.png" alt="Assistance Robot" class="card-image"></li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Gained: motor programming (Arduino), Pi–Arduino interfacing, project management &amp; technical communication.</p>
+          </div>
+
+          <!-- SAE3.Cyber.03 ----------------------------------------->
+          <div class="card no-tilt reveal">
+            <h3>SAE3.Cyber.03 – Secure Multi-site Network</h3>
+            <p class="small">Skill: Secure Architecture Design</p>
+            <p><em>Page coming soon…</em></p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

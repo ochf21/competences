@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+<script>
+(function () {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('dark');
+      var ch = document.getElementById('theme-checkbox');
+      if (ch) ch.checked = true;
+    });
+  }
+})();
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UE3.Cyber.5 – Surveiller | Portfolio Omar Chouffai</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+  <div id="custom-cursor"></div>
+
+  <div id="main-content">
+    <header>
+      <div class="container nav-open-toggle">
+        <span class="logo">Omar Chouffai</span>
+        <nav>
+          <a href="index.html">← Retour aux UE</a>
+          <a href="documents.html">Documents →</a>
+        </nav>
+        <div class="header-controls">
+          <div class="theme-switch-container">
+            <input type="checkbox" id="theme-checkbox">
+            <label for="theme-checkbox" class="label">
+              <span class="icon-sun">🌞</span>
+              <span class="icon-moon">🌜</span>
+            </label>
+          </div>
+          <span class="nav-toggle">☰</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE3.Cyber.5 – Surveiller un SI</h1>
+        <p>Nous y avons appris à mettre en place une supervision continue, à collecter et corréler les logs, puis à réagir aux incidents de sécurité via procédures de réponse et tableaux de bord ; compétences alignées sur les composantes essentielles CE5.01 à CE5.05.</p>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="container">
+        <div class="card no-tilt reveal">
+          <h3>SAE3.Cyber.04 – Découvrir le pentesting</h3>
+
+          <h4>Objectifs</h4>
+          <ul>
+            <li>Mettre en pratique la méthodologie d’audit
+                afin de mieux <em>surveiller</em> un SI.</li>
+          </ul>
+
+          <h4>Exercices Root Me</h4>
+          <p>26 challenges réalisés&nbsp;: web-client, web-server, network, crypto.</p>
+
+          <img src="images/rootme-academique.png" alt="Score Root Me" class="card-image">
+
+          <h4>Compétences mises en avant</h4>
+          <ul>
+            <li>Détection de vulnérabilités (scans, fuzzing).</li>
+            <li>Écriture de règles basiques pour un IDS
+                (ex. Suricata) à partir des failles découvertes.</li>
+            <li>Reporting et plan d’actions correctives.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="reveal">
+      <div class="container">
+        <p>&copy;&nbsp;2025 Omar Chouffai. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
