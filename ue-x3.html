@@ -2,21 +2,21 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-<script>
-(function () {
-  if (localStorage.getItem('theme') === 'dark') {
-    document.documentElement.classList.add('dark');
-    window.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.add('dark');
-      var ch = document.getElementById('theme-checkbox');
-      if (ch) ch.checked = true;
-    });
-  }
-})();
-</script>
+  <script>
+  (function () {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      window.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('dark');
+        var ch = document.getElementById('theme-checkbox');
+        if (ch) ch.checked = true;
+      });
+    }
+  })();
+  </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UE x.3 – Programmer | Portfolio Omar Chouffai</title>
+  <title>UE x.2 – Connecter les entreprises | Portfolio Omar Chouffai</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -30,7 +30,7 @@
         <span class="logo">Omar Chouffai</span>
         <nav>
           <a href="index.html">← Retour aux UE</a>
-          <a href="ue-cyber4.html">Prochain UE →</a>
+          <a href="ue-x3.html">Prochain UE →</a>
         </nav>
         <div class="header-controls">
           <div class="theme-switch-container">
@@ -47,8 +47,8 @@
 
     <section class="hero reveal">
       <div class="container">
-        <h1>UE x.3 – Programmer&nbsp;: outils &amp; applications R&amp;T</h1>
-        <p>Au sein de cette UE, nous avons appris à concevoir, coder et tester des applications communicantes, à traiter et valoriser les données réseau et à industrialiser nos développements via la gestion de version et l’intégration continue ; ces acquis couvrent les composantes essentielles CE3.01 à CE3.05.</p>
+        <h1>UE x.2 – Connecter les entreprises&nbsp;et&nbsp;les&nbsp;usagers</h1>
+        <p>Cette UE nous a permis de maîtriser les dispositifs de transmission filaires et sans-fil, de mesurer et caractériser les signaux, puis d’intégrer ces liaisons dans des architectures d’accès fiables – un ensemble aligné sur les composantes essentielles CE2.01 à CE2.05.</p>
       </div>
     </section>
 
@@ -56,116 +56,63 @@
       <div class="container">
         <div class="grid grid-2">
 
-          <!-- SAÉ1.04 -->
+          <!-- SAE1.03 -->
           <div class="card no-tilt reveal">
-            <h3>SAÉ1.04 – Se présenter sur Internet</h3>
-            <p class="small">Compétence : Identité numérique &amp; e-réputation</p>
+            <h3>SAÉ1.03 – Découvrir un dispositif de transmission</h3>
+            <p class="small">Compétence : Dispositifs de transmission (Wi-Fi)</p>
 
             <h4>Description</h4>
-            <p>Réflexion sur l’identité numérique, création d’une page personnelle
-               et présentation d’un centre d’intérêt / projet.</p>
+            <p>Étude du câblage, des mesures de puissance PoE, réalisation de heatmaps Wi-Fi, mesures de débit et simulation réseau sous Packet Tracer.</p>
 
             <h4>Preuves &amp; traces</h4>
             <ul>
-              <li>Site du projet :
-                  <a href="https://ochf21.github.io/portfolio/" target="_blank">
-                    ochf21.github.io/portfolio</a></li>
-            </ul>
-
-            <h4>Exemple de pratique sécurisée</h4>
-            <p><strong>Construction de l’identité numérique</strong> :<br>
-               Ensemble des traces en ligne (profils, commentaires, photos…).</p>
-            <p><strong>Gestion de l’e-réputation</strong> :<br>
-               Réservation, recrutement ; importance des avis et contenus publics.</p>
-
-            <h4>Mise en œuvre</h4>
-            <ul>
-              <li>Portfolio pour consigner les bonnes pratiques.</li>
-              <li>Page de présentation personnelle (cadre professionnel).</li>
-              <li>Centre d’intérêt : résumé en anglais.</li>
+              <li>Câblage RJ-45 S/FTP – norme TIA-568B.<br><img src="images/sae103_cablage.png" alt="Câblage RJ-45" class="card-image"></li>
+              <li>Mesure PoE avec switch Cisco 2960-24PC-L.<br><img src="images/sae103_poe.png" alt="Mesure PoE" class="card-image"></li>
+              <li>Heatmaps 2.4 GHz &amp; 5 GHz.<br><img src="images/sae103_heatmap24.png" alt="Heatmap 2.4 GHz" class="card-image"><img src="images/sae103_heatmap5.png" alt="Heatmap 5 GHz" class="card-image"></li>
+              <li>Mesures de débit (SpeedTest, nPerf, JPerf).<br><img src="images/sae103_debit.png" alt="Mesure de débit" class="card-image"></li>
+              <li>Simulation Packet Tracer : serveur DNS, Web, DHCP, AP Wi-Fi.<br><img src="images/sae103_pkt.png" alt="Schéma Packet Tracer" class="card-image"></li>
             </ul>
 
             <h4>Conclusion</h4>
-            <p>Compétences : gestion identité numérique, création web pro,
-               amélioration e-réputation.<br>
-               Importance de séparer public / privé et produire un contenu positif.</p>
+            <p>Acquis : câblage structuré, mesure PoE, cartographie Wi-Fi, simulation réseau en équipe.</p>
           </div>
 
-          <!-- SAÉ1.05 -->
+          <!-- SAE2.02 -->
           <div class="card no-tilt reveal">
-            <h3>SAÉ1.05 – Traiter des données</h3>
-            <p class="small">Compétence : Programmation réseau (Scapy)</p>
+            <h3>SAÉ2.02 – Mesurer et caractériser un signal ou un système</h3>
+            <p class="small">Compétence : Métrologie des signaux</p>
 
             <h4>Description</h4>
-            <p>Scripts Python avec <strong>Scapy</strong> : découverte d’hôtes et
-               attaque Man-in-the-Middle.</p>
-
-            <h4>Projet&nbsp;1 – Découverte automatique des hôtes</h4>
-            <p>Options : <code>-a</code> (ICMP actif) · <code>-p</code> (ARP passif)
-               · <code>-t</code> (test plage) · <code>-x</code> (export).</p>
-
-<pre><code class="language-python">from scapy.all import *
-def discover_hosts_active(ip):
-    ans, unans = sr(IP(dst=ip)/ICMP(), timeout=2)
-    for snd, rcv in ans:
-        print(f"{rcv.src} is up")
-    if unans:
-        print(f"No response from {unans.summary()}")
-</code></pre>
-
-            <h4>Projet&nbsp;2 – Attaque MITM (ARP Spoofing)</h4>
-<pre><code class="language-python">from scapy.all import *
-def arp_spoof(target_ip, host_ip):
-    packet = ARP(op=2, pdst=target_ip, hwdst="ff:ff:ff:ff:ff:ff", psrc=host_ip)
-    send(packet, verbose=False)
-
-# Exécution
-arp_spoof("192.168.1.2", "192.168.1.1")
-</code></pre>
-
-            <h4>Conclusion</h4>
-            <p>Compétences : analyse &amp; manipulation de paquets, scripts Scapy,
-               compréhension des attaques potentielles.</p>
-          </div>
-
-          <!-- SAÉ2.04 -->
-          <div class="card no-tilt reveal">
-            <h3>SAÉ2.04 – Projet intégratif</h3>
-            <p class="small">Compétence : Gestion &amp; configuration réseau local</p>
-
-            <h4>Description</h4>
-            <p>Maquette réseau VLAN, téléphonie SIP, collecte MQTT et appli
-               Web pour visualiser les données.</p>
+            <p>Acquisition de signaux audio avec Arduino UNO (Tinkercad), analyse FFT pour reconnaissance de notes et transmission des données.</p>
 
             <h4>Preuves &amp; traces</h4>
             <ul>
-              <li>Topologie réseau, découpage IP, DHCP, NAT, ACL.<br>
-                  <img src="images/sae204_topologie.png" alt="Topologie réseau" class="card-image"></li>
-              <li>VLAN Voix / Utilisateurs / Serveurs / Admin.<br>
-                  <img src="images/sae204_vlans.png" alt="VLANs" class="card-image"></li>
-              <li>Collecte MQTT en temps réel.<br>
-                  <img src="images/sae204_mqtt.png" alt="Collecte MQTT" class="card-image"></li>
-                  <img src="images/sae204_mqtt1.png" alt="Collecte MQTT" class="card-image"></li>
-            </ul>
-
-            <h4>Exemples de pratiques sécurisées</h4>
-            <ul>
-              <li><strong>Réseau</strong> : segmentation VLAN.</li>
-              <li><strong>Téléphonie</strong> : authentification SIP.</li>
-              <li><strong>Données</strong> : chiffrement MQTT.</li>
-              <li><strong>Web</strong> : contrôle d’accès, auth utilisateur.</li>
+              <li>Simulation Tinkercad – schéma câblage.<br><img src="images/sae202_schema.png" alt="Schéma Tinkercad" class="card-image"></li>
             </ul>
 
             <h4>Conclusion</h4>
-            <p>Acquis : admin réseau, VoIP, MQTT, Django/MySQL.<br>
-               Importance de la séparation des responsabilités et de la sécurité
-               sur chaque couche.</p>
+            <p>Acquis : mesure analogique, FFT embarquée et travail collaboratif pour intégration matériel/traitement.</p>
           </div>
 
-          <!-- SAÉ3.02 -->
+          <!-- SAE3.01 -->
           <div class="card no-tilt reveal">
-            <h3>SAE3.02 – Apps communicantes</h3>
-            <p class="small"><em>Page en cours de préparation…</em></p>
+            <h3>SAÉ3.01 – Mettre en œuvre un système de transmission</h3>
+            <p class="small">Compétence : Systèmes de transmission (CE2.01 à CE2.05)</p>
+
+            <h4>Description</h4>
+            <p>Conception et prototypage d’un système de transmission de données via prise connectée, utilisant Arduino pour la captation et Python pour le traitement et l’envoi vers une interface de supervision, avec connexion SSH sécurisée.</p>
+
+            <h4>Preuves &amp; traces</h4>
+            <ul>
+              <li><a href="server.py" download>server.py</a> (4,2 Ko)</li>
+              <li><a href="appli.py" download>appli.py</a> (7,5 Ko)</li>
+              <li><a href="index.html" download>index.html</a> (8,5 Ko)</li>
+              <li><a href="styles.css" download>styles.css</a> (285 o)</li>
+              <li><a href="SAE301_Projet_PriseElectriqueWifi_FI_2024_25.pdf" download>Sujet SAE3.01 (PDF)</a></li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Renforcement des compétences en électronique embarquée, programmation embarquée et transmission de données, avec rigueur d’analyse et tests de performance.</p>
           </div>
 
         </div>
@@ -183,4 +130,3 @@ arp_spoof("192.168.1.2", "192.168.1.1")
   <script src="script.js"></script>
 </body>
 </html>
-
