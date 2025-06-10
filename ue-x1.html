@@ -2,32 +2,36 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <script>
-    (function () {
-      if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark');
-        window.addEventListener('DOMContentLoaded', () => {
-          document.body.classList.add('dark');
-          var ch = document.getElementById('theme-checkbox');
-          if (ch) ch.checked = true;
-        });
-      }
-    })();
-  </script>
+<script>
+(function () {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('dark');
+      var ch = document.getElementById('theme-checkbox');
+      if (ch) ch.checked = true;
+    });
+  }
+})();
+</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SAE3.03 – Réseau multi-sites sécurisé | Portfolio Omar Chouffai</title>
+  <title>UE x.1 – Administrer les réseaux | Portfolio Omar Chouffai</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="scroll-progress"></div>
   <div id="custom-cursor"></div>
 
+
   <div id="main-content">
     <header>
       <div class="container nav-open-toggle">
         <span class="logo">Omar Chouffai</span>
         <nav>
-          <a href="ue-x1.html">← Retour à UE x.1</a>
+          <a href="index.html">← Retour aux UE</a>
+          <a href="ue-x2.html">Prochain UE →</a>
         </nav>
         <div class="header-controls">
           <div class="theme-switch-container">
@@ -42,63 +46,146 @@
       </div>
     </header>
 
+    <section class="hero reveal">
+      <div class="container">
+        <h1>UE x.1 – Administrer les réseaux et l’Internet</h1>
+        <p>
+          Dans cette UE, nous avons appris à <strong>choisir les solutions et technologies réseau adaptées</strong>,
+          à <strong>configurer, dépanner et sécuriser</strong> l’infrastructure, à <strong>documenter nos actions</strong>
+          et à mener une <strong>veille technologique</strong> continue, en appliquant rigoureusement les
+          composantes essentielles&nbsp;CE1.01 à&nbsp;CE1.05.
+        </p>
+      </div>
+    </section>
+
     <section class="reveal">
       <div class="container">
         <div class="grid grid-2">
+
+          <!--SAE1.01 ------------------------------------------------>
           <div class="card no-tilt reveal">
-            <h3>SAE3.03 – Réseau multi-sites sécurisé</h3>
+            <h3>SAÉ1.01 – Sensibilisation à l’hygiène informatique</h3>
+            <p class="small">Compétence : Hygiène Informatique &amp; Cybersécurité</p>
 
-            <h4>Contexte et Objectifs</h4>
-            <p>
-              Dans cette SAE, l’objectif était de concevoir, configurer et sécuriser l’interconnexion 
-              multi-sites de deux entreprises (UC Exchange &amp; ABC Conseil) réparties sur plusieurs villes, 
-              en passant par un FAI simulé.  
-              <strong>J’ai personnellement réalisé toute la partie FAI</strong> : conception, configuration, 
-              sécurisation et documentation de l’architecture opérateur.
-            </p>
+            <h4>Description</h4>
+            <p>Découverte des principales menaces, bonnes pratiques et outils de vérification
+               pour maintenir un environnement numérique sécurisé.</p>
+
+            <h4>Preuves et traces</h4>
             <ul>
-              <li>Haute disponibilité &amp; tolérance aux pannes (liens redondants, VRRP…)</li>
-              <li>Segmentation réseau (VLAN &amp; VRF)</li>
-              <li>Routage inter-sites et inter-AS (RIP, OSPF, BGP, MPLS-VPN)</li>
-              <li>Déploiement des services (DNS, Web, Mail)</li>
-              <li>Sécurisation (ACL, NAT, filtrage)</li>
+              <li>Vidéo de présentation&nbsp;: <a href="https://www.youtube.com/watch?v=oCYMneu5Gtc" target="_blank">YouTube</a></li>
+              <li>Exemple de pratique&nbsp;: authentification d’un site HTTPS
+                  (cadenas, certificat, alertes navigateur).</li>
+              <li><img src="images/sae101_https.png" alt="Validation certificat HTTPS" class="card-image"></li>
             </ul>
 
-            <h4>Architecture et Solutions Techniques</h4>
+            <h4>Conclusion</h4>
+            <p>Acquis : compréhension des menaces, réflexes d’hygiène informatique,
+               vérification d’authenticité des sites.<br>
+               Utilité directe en R&amp;T : participation à la sécurité des SI et des données.</p>
+          </div>
+
+          <!--SAE1.02 ------------------------------------------------>
+          <div class="card no-tilt reveal">
+            <h3>SAÉ1.02 – S’initier aux réseaux informatiques</h3>
+            <p class="small">Compétence : Réseaux informatiques</p>
+
+            <h4>Description</h4>
+            <p>Mise en place d’un laboratoire virtuel EVE-NG : configuration de routeur
+               &amp; switch Cisco, VLANs, adressage IP.</p>
+
+            <h4>Preuves et traces</h4>
             <ul>
-              <li><strong>3 AS</strong> : AS10 (UC Exchange), AS20 (ABC Conseil), AS30 (FAI)</li>
-              <li>VRF pour isolation des clients (UC_Exchange, ABC_Conseil)</li>
-              <li>MSTP &amp; VRRP pour redondance et basculement</li>
-              <li>Routage : RIP (AS10/20), OSPF (AS30), BGP/MP-BGP (inter-AS, VPNv4)</li>
-              <li>NAT statique/dynamique pour exposer les services internes</li>
+              <li>Capture EVE-NG&nbsp;: topologie + configs.</li>
+              <li><img src="images/sae102_lab.png" alt="Lab EVE-NG" class="card-image"></li>
+              <li>Table des adresses IP.</li>
+              <li><img src="images/sae102_tables.png" alt="Lab EVE-NG" class="card-image"></li>
             </ul>
 
-            <h4>Services Déployés</h4>
+            <h4>Conclusion</h4>
+            <p>Acquis : configuration de routeurs/commutateurs, segmentation par VLAN,
+               prise en main d’EVE-NG pour des maquettes réseau.</p>
+          </div>
+
+          <!--SAE2.05 ----------------------------------------------->
+          <div class="card no-tilt reveal">
+            <h3>SAE2.05 – Portfolio &amp; poster d’activité</h3>
+            <p class="small">Compétence : Présentation de projet</p>
+
+            <h4>Description</h4>
+            <p>Création d’un poster + document réflexif sur un robot d’aide aux
+               personnes à mobilité réduite (lycée).</p>
+
+            <h4>Preuves et traces</h4>
             <ul>
-              <li>DNS (Windows &amp; Linux, DNSSEC)</li>
-              <li>Web (Apache, intranet &amp; extranet)</li>
-              <li>Mail (SMTP/IMAP, tests Telnet)</li>
-              <li>Active Directory (Windows)</li>
+              <li>Captures : robot, câblage moteurs, Raspberry Pi ↔ Arduino.</li>
+              <li><img src="images/sae205_robot1.png" alt="Robot PMR" class="card-image">
+              </li>
             </ul>
 
-            <h4>Sécurité et Tests</h4>
-            <ul>
-              <li>ACL pour filtrage (SSH restreint)</li>
-              <li>NAT pour accès public (e.g. 192.168.40.1 → 11.11.11.1)</li>
-              <li>Tests de ping intra-AS, inter-sites et coupures pour valider la redondance</li>
-              <li>Accès public simulé via VPC_public (9.9.9.9)</li>
-            </ul>
+            <h4>Conclusion</h4>
+            <p>Acquis : programmation moteurs (Arduino), interfaçage Raspberry Pi,
+               gestion de projet &amp; communication technique.</p>
+          </div>
 
-            <h4>Compétences acquises</h4>
-            <ul>
-              <li>Conception d’architectures multi-sites hiérarchiques et scalables</li>
-              <li>Configuration avancée LAN (VLAN, MSTP, VRRP)</li>
-              <li>Routage opérateur (MPLS, VRF, BGP)</li>
-              <li>Déploiement et sécurisation de services réseau</li>
-            </ul>
+          <!--SAE3.Cyber.03 ----------------------------------------->
+<section class="reveal">
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="card no-tilt reveal">
+        <h3>SAE3.03 – Réseau multi-sites sécurisé</h3>
 
-            <h4>Exemple de configuration</h4>
-            <pre><code>ip vrf UC_Exchange
+        <h4>Contexte et Objectifs</h4>
+        <p>
+          Dans cette SAE, l’objectif était de concevoir, configurer et sécuriser l’interconnexion 
+          multi-sites de deux entreprises (UC Exchange &amp; ABC Conseil) réparties sur plusieurs villes, 
+          en passant par un FAI simulé.  
+          <strong>J’ai personnellement réalisé toute la partie FAI</strong> : conception, configuration, 
+          sécurisation et documentation de l’architecture opérateur.
+        </p>
+        <ul>
+          <li>Haute disponibilité &amp; tolérance aux pannes (liens redondants, VRRP…)</li>
+          <li>Segmentation réseau (VLAN &amp; VRF)</li>
+          <li>Routage inter-sites et inter-AS (RIP, OSPF, BGP, MPLS-VPN)</li>
+          <li>Déploiement des services (DNS, Web, Mail)</li>
+          <li>Sécurisation (ACL, NAT, filtrage)</li>
+        </ul>
+
+        <h4>Architecture et Solutions Techniques</h4>
+        <ul>
+          <li><strong>3 AS</strong> : AS10 (UC Exchange), AS20 (ABC Conseil), AS30 (FAI)</li>
+          <li>VRF pour isolation (UC_Exchange, ABC_Conseil)</li>
+          <li>MSTP &amp; VRRP pour redondance</li>
+          <li>Routage : RIP (AS10/20), OSPF (AS30), BGP/MP-BGP (inter-AS, VPNv4)</li>
+          <li>NAT statique/dynamique pour accès public</li>
+        </ul>
+
+        <h4>Services Déployés</h4>
+        <ul>
+          <li>DNS (Windows &amp; Linux, DNSSEC)</li>
+          <li>Web (Apache, intranet &amp; extranet)</li>
+          <li>Mail (SMTP/IMAP, tests Telnet)</li>
+          <li>Active Directory (Windows)</li>
+        </ul>
+
+        <h4>Sécurité et Tests</h4>
+        <ul>
+          <li>ACL pour filtrage (SSH restreint)</li>
+          <li>NAT pour exposer les services (e.g. 192.168.40.1 → 11.11.11.1)</li>
+          <li>Tests de ping intra-AS, inter-sites &amp; basculement</li>
+          <li>Accès public simulé via VPC_public (9.9.9.9)</li>
+        </ul>
+
+        <h4>Compétences acquises</h4>
+        <ul>
+          <li>Architectures multi-sites hiérarchiques et scalables</li>
+          <li>Configuration LAN avancée (VLAN, MSTP, VRRP)</li>
+          <li>Routage opérateur (MPLS, VRF, BGP)</li>
+          <li>Sécurisation et déploiement de services réseau</li>
+        </ul>
+
+        <h4>Exemple de configuration</h4>
+        <pre><code>ip vrf UC_Exchange
  rd 10:2
  route-target export 10:2
  route-target import 10:2
@@ -110,22 +197,21 @@ router bgp 10
   neighbor 10.10.4.4 send-community extended
 </code></pre>
 
-            <h4>Illustration de l’architecture FAI</h4>
-            <p>Ajoutez ici votre capture d’écran :</p>
-            <img src="images/mon_archi_fai.png"
-                 alt="Architecture FAI – réseau opérateur"
-                 class="card-image">
+        <h4>Illustration de l’architecture FAI</h4>
+        <p>Ta capture d’écran ici :</p>
+        <img src="images/mon_archi_fai.png"
+             alt="Architecture FAI – réseau opérateur"
+             class="card-image">
 
-            <h4>Conclusion</h4>
-            <p>
-              Cette SAE m’a permis de mettre en œuvre l’ensemble des compétences nécessaires au déploiement 
-              d’une architecture réseau professionnelle, résiliente et sécurisée, de la couche LAN jusqu’au 
-              cœur opérateur.
-            </p>
-          </div>
-        </div>
+        <h4>Conclusion</h4>
+        <p>
+          Cette SAE m’a permis de mettre en œuvre toutes les compétences nécessaires au déploiement 
+          d’une architecture réseau professionnelle, résiliente et sécurisée, de la couche LAN au cœur opérateur.
+        </p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <footer class="reveal">
       <div class="container">
@@ -138,3 +224,8 @@ router bgp 10
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
