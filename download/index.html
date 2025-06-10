@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrôle des Prises Connectées</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<script>
+    // Script pour afficher l'heure en temps réel
+    function updateClock() {
+        const now = new Date();
+        const options = { timeZone: 'Europe/Paris', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        document.getElementById('clock').innerText = now.toLocaleTimeString('fr-FR', options);
+    }
+    setInterval(updateClock, 1000);
+    document.addEventListener('DOMContentLoaded', updateClock);
+    var temp_username = "{{var_username}}";
+    var temp_password = "{{var_password}}";
+
+    const USERNAME = temp_username;
+    const PASSWORD = temp_password;
+
+    function login(event) {
+        event.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === USERNAME && password === PASSWORD) {
+            document.getElementById("login-container").style.display = "none";
+            document.getElementById("control-container").style.display = "block";
+            checkTemperature(); // Initialisation des données après connexion
+            checkLedStatus('led1'); // Vérifier l'état initial de la LED 1
+            checkLedStatus('led2'); // Vérifier l'état initial de la LED 2
+            startAutoRefresh(); // Démarrer le rafraîchissement automatique
+        } else {
+            alert("Nom d'utilisateur ou mot de passe incorrect");
+        }
+    }
+
+    function updateStatus(status, led) {
+        document.getElementById("led-status-display" + led).innerText = status;
+    }
+
+    function toggleLed(action, led) {
+        let endpoint = led === 'led1' ? '/control1' : '/control2';
+        fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'action=' + action
+        }).then(response => {
+            if (response.ok) {
+                updateStatus(action === 'on' ? 'ON' : 'OFF', led === 'led1' ? 1 : 2);
+                checkLedStatus(led);  // Vérification immédiate après l'action
+            } else {
+                console.log('Erreur lors de la publication sur le serveur.');
+            }
+        });
+    }
+
+    function toggleBoth(action) {
+        fetch('/control', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'led=both&action=' + action
+        }).then(response => {
+            if (response.ok) {
+                updateStatus(action === 'on' ? 'ON' : 'OFF', 1);
+                updateStatus(action === 'on' ? 'ON' : 'OFF', 2);
+            } else {
+                console.log('Erreur lors de la publication sur le serveur.');
+            }
+        });
+    }
+
+    function checkTemperature() {
+        fetch('/temperature')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("temperature-display").innerText = data.temperature;
+            })
+            .catch(error => {
+                console.log('Erreur lors de la récupération de la température');
+            });
+    }
+
+    function setSchedule(led) {
+        const onTime = document.getElementById(`schedule-on-${led}`).value;
+
+        if (onTime) {
+            fetch(`/schedule_${led}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ on: onTime })
+            }).then(response => {
+                if (response.ok) {
+                    alert(`Programmation pour ${led.toUpperCase()} définie avec succès.`);
+                    scheduleLedCheck(led, onTime);
+                } else {
+                    console.log('Erreur lors de la définition de la programmation.');
+                }
+            });
+        }
+    }
+
+    function scheduleLedCheck(led, onTime) {
+        const targetTime = new Date(onTime);
+
+        // Vérification régulière toutes les minutes
+        const intervalId = setInterval(() => {
+            const now = new Date();
+            if (now >= targetTime) {
+                toggleLed('on', led);
+                clearInterval(intervalId);  // Stopper la vérification après allumage
+            }
+        }, 60000);  // Vérifier chaque minute
+    }
+
+    function checkLedStatus(led) {
+        fetch('/led_status')
+            .then(response => response.json())
+            .then(data => {
+                if (led === 'led1') {
+                    document.getElementById("led-status-display1").innerText = data.led1_status;
+                } else if (led === 'led2') {
+                    document.getElementById("led-status-display2").innerText = data.led2_status;
+                }
+            })
+            .catch(error => {
+                console.log('Erreur lors de la récupération de l\'état de la LED');
+            });
+    }
+
+    // Fonction pour démarrer le rafraîchissement automatique
+    function startAutoRefresh() {
+        setInterval(() => {
+            checkLedStatus('led1');
+            checkLedStatus('led2');
+        }, 1000);  // Rafraîchir toutes les secondes pour être en temps réel
+    }
+
+    // Vérifiez l'état des LEDs et la température au chargement de la page
+    document.addEventListener('DOMContentLoaded', (event) => {
+        if (document.getElementById("control-container").style.display === "block") {
+            checkTemperature();
+            checkLedStatus('led1');
+            checkLedStatus('led2');
+        }
+    });
+
+    // Mise à jour régulière de la température
+    setInterval(() => {
+        if (document.getElementById("control-container").style.display === "block") {
+            checkTemperature();
+        }
+    }, 5000);
+</script>
+
+</head>
+
+<body>
+    <div class="container" id="login-container">
+        <h1>Connexion</h1>
+        <form onsubmit="return login(event)">
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" required>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" required>
+            <button type="submit">Se Connecter</button>
+        </form>
+    </div>
+    <div class="container">
+        <!-- Horloge en haut à gauche de la page -->
+        <div id="clock-container" style="position: absolute; top: 10px; left: 10px;">
+            Heure actuelle (Paris) : <span id="clock"></span>
+        </div>
+        <div class="container" id="control-container" style="display: none;">
+            <h1>Contrôle des Prises Connectées</h1>
+
+            <!-- Contrôle Prise 1 -->
+            <h2>État de la LED 1 : <span id="led-status-display1">{{ led_status1 }}</span></h2>
+            <button onclick="toggleLed('on', 'led1')">Allumer la LED 1</button>
+            <button onclick="toggleLed('off', 'led1')">Éteindre la LED 1</button>
+
+            <!-- Programmation pour LED 1 -->
+            <h3>Programmer l'allumage de la LED 1</h3>
+            <input type="datetime-local" id="schedule-on-led1">
+            <button onclick="setSchedule('led1')">Définir la Programmation</button>
+
+            <!-- Contrôle Prise 2 -->
+            <h2>État de la LED 2 : <span id="led-status-display2">{{ led_status2 }}</span></h2>
+            <button onclick="toggleLed('on', 'led2')">Allumer la LED 2</button>
+            <button onclick="toggleLed('off', 'led2')">Éteindre la LED 2</button>
+
+            <!-- Programmation pour LED 2 -->
+            <h3>Programmer l'allumage de la LED 2</h3>
+            <input type="datetime-local" id="schedule-on-led2">
+            <button onclick="setSchedule('led2')">Définir la Programmation</button>
+
+            <!-- Contrôle des Deux LEDs en Même Temps -->
+            <h2>Contrôle des Deux LEDs</h2>
+            <button onclick="toggleBoth('on')">Allumer les Deux LEDs</button>
+            <button onclick="toggleBoth('off')">Éteindre les Deux LEDs</button>
+
+            <!-- Affichage Température -->
+            <h2>Température actuelle : <span id="temperature-display"></span>°C</h2>
+        </div>
+    </div>
+</body>
+
+</html>
