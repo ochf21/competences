@@ -136,6 +136,64 @@
             <p>Acquired skills in designing resilient multi-site architectures, ISP-level routing, and securing network services.</p>
           </div>
 
+          <!-- SAE5.01 -->
+          <div class="card no-tilt reveal">
+            <h3>SAE5.01 – Design, Build and Present a Technical Solution</h3>
+            <p class="small">Skill: IoT Solutions &amp; Embedded Systems</p>
+
+            <h4>Project: Vehicle Tracking by GNSS</h4>
+            <p>Design and implementation of an embedded geolocation system using IoT technologies for vehicle tracking with a LoRaWAN architecture.</p>
+
+            <h4>Main Objective</h4>
+            <p>Use the Pycom environment to transmit GNSS data from a vehicle through The Things Network (TTN) LoRaWAN network and visualize its position on a map via a web server.</p>
+
+            <h4>Final Goal: Low-Power Autonomous System</h4>
+            <ul>
+              <li>Remain in sleep mode (deep sleep) by default</li>
+              <li>Wake up automatically when motion is detected (accelerometer)</li>
+              <li>Transmit geographic position via LoRaWAN</li>
+              <li>Send SMS alerts for unauthorized movement</li>
+              <li>Enter sleep mode remotely via web interface</li>
+            </ul>
+
+            <h4>Technical Architecture</h4>
+            <p><strong>Hardware:</strong></p>
+            <ul>
+              <li>📡 End-Device: Pytrack + Fipy/Lopy with LoRa antenna</li>
+              <li>🌐 LoRaWAN Gateway: Expansion 3/Pysens + Fipy/Lopy</li>
+              <li>💻 Server: Raspberry Pi with Node-RED</li>
+            </ul>
+
+            <p><strong>Completed Validations (8 steps):</strong></p>
+            <ul>
+              <li>✅ MQTT communication and mapping</li>
+              <li>✅ TTN infrastructure (Application, Gateway, 99% IT duty cycle)</li>
+              <li>✅ Data formatting (JSON Payload, Uplink formatters)</li>
+              <li>✅ TTN visualization (MQTT broker, Node-RED integration)</li>
+              <li>✅ Optimization (latitude/longitude on 3 bytes each)</li>
+              <li>✅ Smart sleep mode (accelerometer + deep sleep)</li>
+              <li>✅ Remote control (Downlink, stop via web page)</li>
+              <li>✅ Notifications (2G/3G SMS, push notifications with GPS)</li>
+            </ul>
+
+            <h4>Skills Acquired</h4>
+            <ul>
+              <li>Embedded Python programming (MicroPython)</li>
+              <li>IoT protocols: LoRaWAN, MQTT</li>
+              <li>Power management and sleep modes</li>
+              <li>Sensor integration (GPS, accelerometer)</li>
+              <li>Web development (Node-RED, mapping interface)</li>
+              <li>IoT network architecture (TTN, Gateway, End-Device)</li>
+              <li>Data transmission optimization</li>
+            </ul>
+
+            <h4>Project Duration</h4>
+            <p><strong>Total: 27.5 hours</strong> (8h supervised + 19.5h independent)</p>
+
+            <h4>Result</h4>
+            <p>Functional and autonomous geolocation system, meeting power consumption constraints and enabling real-time tracking with SMS alerts and push notifications.</p>
+          </div>
+
         </div>
       </div>
     </section>
