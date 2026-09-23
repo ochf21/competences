@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+<meta charset="utf-8"/>
 <script>
 (function () {
   if (localStorage.getItem('theme') === 'dark') {
@@ -14,139 +15,121 @@
   }
 })();
 </script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UEX.Cyber.4 – Sécuriser | Portfolio Omar Chouffai</title>
-  <link rel="stylesheet" href="style.css">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>UEX.Cyber.4 – Sécuriser | Portfolio Omar Chouffai</title>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <div id="scroll-progress"></div>
-  <div id="custom-cursor"></div>
-
-  <div id="main-content">
-    <header>
-      <div class="container nav-open-toggle">
-        <span class="logo">Omar Chouffai</span>
-        <nav>
-          <a href="index.html">← Retour aux UE</a>
-          <a href="ue-cyber5.html">Prochain UE →</a>
-        </nav>
-        <div class="header-controls">
-          <div class="theme-switch-container">
-            <input type="checkbox" id="theme-checkbox">
-            <label for="theme-checkbox" class="label">
-              <span class="icon-sun">🌞</span>
-              <span class="icon-moon">🌜</span>
-            </label>
-          </div>
-          <span class="nav-toggle">☰</span>
-        </div>
-      </div>
-    </header>
-
-    <section class="hero reveal">
-      <div class="container">
-        <h1>UE3.Cyber.4 – Sécuriser un SI</h1>
-        <p>Cette UE nous a formés à détecter, analyser et corriger les vulnérabilités : élaboration de scénarios d'intrusion, application de contre-mesures, rédaction de rapports d'audit ; l'ensemble s'appuie sur les composantes essentielles CE4.01 à CE4.05.</p>
-      </div>
-    </section>
-
-    <section class="reveal">
-      <div class="container">
-        <div class="grid grid-2">
-          
-          <!-- SAE3.Cyber.04 -->
-          <div class="card no-tilt reveal">
-            <h3>SAE3.Cyber.04 – Découvrir le pentesting</h3>
-
-            <h4>Objectifs</h4>
-            <ul>
-              <li>Comprendre la démarche d'audit d'intrusion&nbsp;: reconnaissance,
+<div id="scroll-progress"></div>
+<div id="custom-cursor"></div>
+<div id="main-content">
+<header>
+<div class="container nav-open-toggle">
+<span class="logo">Omar Chouffai</span>
+<nav>
+<a href="index.html">← Retour aux UE</a>
+<a href="ue-cyber5.html">Prochain UE →</a>
+</nav>
+<div class="header-controls">
+<div class="theme-switch-container">
+<input id="theme-checkbox" type="checkbox"/>
+<label class="label" for="theme-checkbox">
+<span class="icon-sun">🌞</span>
+<span class="icon-moon">🌜</span>
+</label>
+</div>
+<span class="nav-toggle">☰</span>
+</div>
+</div>
+</header>
+<section class="hero reveal">
+<div class="container">
+<h1>UE3.Cyber.4 – Sécuriser un SI</h1>
+<p>Cette UE nous a formés à détecter, analyser et corriger les vulnérabilités : élaboration de scénarios d'intrusion, application de contre-mesures, rédaction de rapports d'audit ; l'ensemble s'appuie sur les composantes essentielles CE4.01 à CE4.05.</p>
+</div>
+</section>
+<section class="reveal">
+<div class="container">
+<div class="grid grid-2">
+<!-- SAE3.Cyber.04 -->
+<div class="card no-tilt reveal">
+<h3>SAE3.Cyber.04 – Découvrir le pentesting</h3>
+<h4>Objectifs</h4>
+<ul>
+<li>Comprendre la démarche d'audit d'intrusion : reconnaissance,
                   exploitation, post-exploitation.</li>
-              <li>Se familiariser avec les outils de base (nmap, hydra, gobuster,
+<li>Se familiariser avec les outils de base (nmap, hydra, gobuster,
                   Burp Suite, metasploit).</li>
-            </ul>
-
-            <h4>Déroulement</h4>
-            <p>Pendant la SAE, nous avons réalisé&nbsp;:</p>
-            <ul>
-              <li>💡 <strong>26 challenges Root Me</strong> (web, réseau, crypto)
+</ul>
+<h4>Déroulement</h4>
+<p>Pendant la SAE, nous avons réalisé :</p>
+<ul>
+<li>💡 <strong>26 challenges Root Me</strong> (web, réseau, crypto)
                   pour consolider la méthodologie.</li>
-              <li>🛠️ ateliers guidés&nbsp;: scan réseau, brute-force HTTP,
+<li>🛠️ ateliers guidés : scan réseau, brute-force HTTP,
                   xss &amp; injections SQL.</li>
-            </ul>
-
-            <h4>Résultat</h4>
-            <p>3ᵉ place au classement Root Me Académique : <strong>1 470 pts</strong>.</p>
-            <img src="images/rootme-academique.png" alt="Score Root Me" class="card-image">
-
-            <h4>Compétences acquises</h4>
-            <ul>
-              <li>Collecte d'informations et cartographie d'un SI.</li>
-              <li>Exploitation de failles courantes (OWASP Top 10).</li>
-              <li>Rédaction de comptes-rendus d'audit et recommandations.</li>
-            </ul>
-          </div>
-
-          <!-- SAE4.Cyber.01 -->
-          <div class="card no-tilt reveal">
-            <h3>SAE4.Cyber.01 – Sécuriser un système d'information</h3>
-
-            <h4>Objectifs</h4>
-            <ul>
-              <li>Déployer et sécuriser une infrastructure réseau complète</li>
-              <li>Mettre en place des services critiques avec haute disponibilité</li>
-              <li>Implémenter une Infrastructure à Clés Publiques (IGC)</li>
-              <li>Configurer des services d'annuaire et d'authentification</li>
-            </ul>
-
-            <h4>Services déployés</h4>
-            <p>Durant cette SAE, nous avons mis en place les services suivants :</p>
-            <ul>
-              <li>🌐 <strong>DNS sécurisé (BIND9)</strong> : configuration de zones DNS directes et inverses</li>
-              <li>🔐 <strong>IGC complète</strong> : création de certificats racine, serveur et client</li>
-              <li>📁 <strong>Annuaire LDAP sécurisé</strong> : authentification centralisée avec LDAPs (TLS)</li>
-              <li>🔒 <strong>VPN OpenVPN</strong> : accès distant sécurisé avec routage et filtrage</li>
-              <li>📂 <strong>NFS avec authentification PAM</strong> : partage de fichiers sécurisé</li>
-              <li>🌍 <strong>Serveur Web haute disponibilité</strong> : Apache2/Nginx avec load balancing et HTTPS</li>
-              <li>📧 <strong>Messagerie sécurisée</strong> : Postfix (SMTP) + Dovecot (IMAP) avec authentification LDAP</li>
-              <li>🔄 <strong>Proxy authentifiant Squid</strong></li>
-            </ul>
-
-            <h4>Compétences techniques acquises</h4>
-            <ul>
-              <li>Architecture réseau : plan d'adressage IP, routage avancé, règles de filtrage</li>
-              <li>Virtualisation : création et gestion de VMs Linux Debian sur VirtualBox</li>
-              <li>Sécurité : mise en place de chiffrement TLS/SSL sur tous les services</li>
-              <li>Haute disponibilité : configuration de services redondants</li>
-              <li>Analyse : lecture et interprétation des logs système</li>
-            </ul>
-
-            <h4>Présentation et évaluation</h4>
-            <p>Présentation technique de 10 minutes (5 min + 5 min questions) incluant :</p>
-            <ul>
-              <li>Démonstration vidéo des services déployés</li>
-              <li>Schémas détaillés de l'architecture réseau</li>
-              <li>Justification des choix techniques</li>
-              <li>Évaluation des risques de sécurité</li>
-            </ul>
-
-            <h4>Résultat</h4>
-            <p>Mise en place réussie d'une infrastructure complète et sécurisée, démontrant une maîtrise des services réseau critiques et des bonnes pratiques de sécurité.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <footer class="reveal">
-      <div class="container">
-        <p>&copy;&nbsp;2025 Omar Chouffai. Tous droits réservés.</p>
-      </div>
-    </footer>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-  <script src="script.js"></script>
+</ul>
+<h4>Résultat</h4>
+<p>3ᵉ place au classement Root Me Académique : <strong>1 470 pts</strong>.</p>
+<img alt="Score Root Me" class="card-image" src="images/rootme-academique.png"/>
+<h4>Compétences acquises</h4>
+<ul>
+<li>Collecte d'informations et cartographie d'un SI.</li>
+<li>Exploitation de failles courantes (OWASP Top 10).</li>
+<li>Rédaction de comptes-rendus d'audit et recommandations.</li>
+</ul>
+</div>
+<!-- SAE4.Cyber.01 -->
+<div class="card no-tilt reveal">
+<h3>SAE4.Cyber.01 – Sécuriser un système d'information</h3>
+<h4>Objectifs</h4>
+<ul>
+<li>Déployer et sécuriser une infrastructure réseau complète</li>
+<li>Mettre en place des services critiques avec haute disponibilité</li>
+<li>Implémenter une Infrastructure à Clés Publiques (IGC)</li>
+<li>Configurer des services d'annuaire et d'authentification</li>
+</ul>
+<h4>Services déployés</h4>
+<p>Durant cette SAE, nous avons mis en place les services suivants :</p>
+<ul>
+<li>🌐 <strong>DNS sécurisé (BIND9)</strong> : configuration de zones DNS directes et inverses</li>
+<li>🔐 <strong>IGC complète</strong> : création de certificats racine, serveur et client</li>
+<li>📁 <strong>Annuaire LDAP sécurisé</strong> : authentification centralisée avec LDAPs (TLS)</li>
+<li>🔒 <strong>VPN OpenVPN</strong> : accès distant sécurisé avec routage et filtrage</li>
+<li>📂 <strong>NFS avec authentification PAM</strong> : partage de fichiers sécurisé</li>
+<li>🌍 <strong>Serveur Web haute disponibilité</strong> : Apache2/Nginx avec load balancing et HTTPS</li>
+<li>📧 <strong>Messagerie sécurisée</strong> : Postfix (SMTP) + Dovecot (IMAP) avec authentification LDAP</li>
+<li>🔄 <strong>Proxy authentifiant Squid</strong></li>
+</ul>
+<h4>Compétences techniques acquises</h4>
+<ul>
+<li>Architecture réseau : plan d'adressage IP, routage avancé, règles de filtrage</li>
+<li>Virtualisation : création et gestion de VMs Linux Debian sur VirtualBox</li>
+<li>Sécurité : mise en place de chiffrement TLS/SSL sur tous les services</li>
+<li>Haute disponibilité : configuration de services redondants</li>
+<li>Analyse : lecture et interprétation des logs système</li>
+</ul>
+<h4>Présentation et évaluation</h4>
+<p>Présentation technique de 10 minutes (5 min + 5 min questions) incluant :</p>
+<ul>
+<li>Démonstration vidéo des services déployés</li>
+<li>Schémas détaillés de l'architecture réseau</li>
+<li>Justification des choix techniques</li>
+<li>Évaluation des risques de sécurité</li>
+</ul>
+<h4>Résultat</h4>
+<p>Mise en place réussie d'une infrastructure complète et sécurisée, démontrant une maîtrise des services réseau critiques et des bonnes pratiques de sécurité.</p>
+</div>
+<div class="card no-tilt reveal"><h3>SAÉ6.Cyber.01 – Réagir face à une cyber-attaque</h3><p class="small">SAÉ prévue par le programme national – preuve à ajouter</p><h4>Objectifs du programme national</h4><ul><li>Identifier une attaque et ses enjeux</li><li>Stopper sa propagation et neutraliser l’attaque</li><li>Prélever et conserver les preuves</li><li>Réaliser les premières investigations</li></ul><h4>Preuves &amp; traces</h4><p>À compléter lorsque les livrables / captures / rapports seront disponibles.</p></div></div>
+</div>
+</section>
+<footer class="reveal">
+<div class="container">
+<p>© 2026 Omar Chouffai. Tous droits réservés.</p>
+</div>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
