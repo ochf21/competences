@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+<meta charset="utf-8"/>
 <script>
 (function () {
   if (localStorage.getItem('theme') === 'dark') {
@@ -14,231 +15,136 @@
   }
 })();
 </script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Omar Chouffai Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Omar Chouffai Portfolio</title>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <div id="scroll-progress"></div>
-  <div id="custom-cursor"></div>
-
-  <div id="loader-screen">
-    <div class="terminal-loader">
-      <div class="terminal-header">
-        <div class="terminal-title">Status</div>
-        <div class="terminal-controls">
-          <div class="control close"></div>
-          <div class="control minimize"></div>
-          <div class="control maximize"></div>
-        </div>
-      </div>
-      <div class="text">Loading...</div>
-    </div>
-  </div>
-
-  <div id="main-content" class="hidden">
-<header>
-  <div class="container nav-open-toggle">
-    <span class="logo">Omar Chouffai</span>
-
-    <nav>
-      <a href="#competences">Skills</a>
-      <a href="#parcours">Resume</a>
-      <a href="#ue">Modules&nbsp;&amp;&nbsp;SAE</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="header-controls">
-      <div class="theme-switch-container">
-        <input type="checkbox" id="theme-checkbox" />
-        <label for="theme-checkbox" class="label">
-          <span class="icon-sun">🌞</span>
-          <span class="icon-moon">🌜</span>
-        </label>
-      </div>
-
-<div class="lang-switch-container">
-  <input type="checkbox" id="lang-checkbox">
-  <label for="lang-checkbox" class="lang-label">
-    <img src="images/france.png" alt="FR" class="flag-fr" style="height:22px; vertical-align:middle;">
-    <img src="images/royaume-uni.png" alt="EN" class="flag-en" style="height:22px; vertical-align:middle;">
-  </label>
+<div id="scroll-progress"></div>
+<div id="custom-cursor"></div>
+<div id="loader-screen">
+<div class="terminal-loader">
+<div class="terminal-header">
+<div class="terminal-title">Status</div>
+<div class="terminal-controls">
+<div class="control close"></div>
+<div class="control minimize"></div>
+<div class="control maximize"></div>
 </div>
-
-
-      <span class="nav-toggle">☰</span>
-    </div>
-  </div>
+</div>
+<div class="text">Loading...</div>
+</div>
+</div>
+<div class="hidden" id="main-content">
+<header>
+<div class="container nav-open-toggle">
+<span class="logo">Omar Chouffai</span>
+<nav>
+<a href="#competences">Skills</a>
+<a href="#parcours">Resume</a>
+<a href="#ue">Modules &amp; SAE</a>
+<a href="#contact">Contact</a>
+</nav>
+<div class="header-controls">
+<div class="theme-switch-container">
+<input id="theme-checkbox" type="checkbox"/>
+<label class="label" for="theme-checkbox">
+<span class="icon-sun">🌞</span>
+<span class="icon-moon">🌜</span>
+</label>
+</div>
+<div class="lang-switch-container">
+<input id="lang-checkbox" type="checkbox"/>
+<label class="lang-label" for="lang-checkbox">
+<img alt="FR" class="flag-fr" src="images/france.png" style="height:22px; vertical-align:middle;"/>
+<img alt="EN" class="flag-en" src="images/royaume-uni.png" style="height:22px; vertical-align:middle;"/>
+</label>
+</div>
+<span class="nav-toggle">☰</span>
+</div>
+</div>
 </header>
-
-    <section class="hero reveal">
-      <div class="container">
-        <h1>Welcome to my Portfolio</h1>
-        <p>Hi, I’m Omar, a Network&nbsp;&amp;&nbsp;Telecom student.  
-           Here you’ll find my academic and professional journey, key
-           projects and the skills I’ve built along the way.  
-           Feel free to explore each section to learn more about my profile.</p>
-      </div>
-    </section>
-
-    <section id="competences" class="reveal">
-      <div class="container">
-        <h2>Skills&nbsp;&amp;&nbsp;Experience</h2>
-        <div class="grid grid-2">
-          <div class="card no-tilt reveal">
-            <h3>Network Administration</h3>
-            <p>Deployed and managed campus and operator infrastructures (DSL, fibre, copper).</p>
-            <ul>
-              <li>DNS (BIND9) &amp; DHCP servers</li>
-              <li>Cisco routing : OSPF, BGP, MPLS, VPN</li>
-            </ul>
-          </div>
-          <div class="card no-tilt reveal">
-            <h3>Systems Programming</h3>
-            <p>Distributed &amp; multithreaded apps in Python, C and Java.</p>
-            <ul>
-              <li>SAE3.02 : Master/Worker distributed engine</li>
-              <li>GUI with PyQt6, Tkinter</li>
-            </ul>
-          </div>
-          <div class="card no-tilt reveal">
-            <h3>Security &amp; Pentest</h3>
-            <p>Intrusion tests and advanced exploitation.</p>
-            <ul>
-              <li>OSINT, Nmap, Metasploit, BurpSuite, Hashcat</li>
-              <li>Phishing, brute-force, SQL injections</li>
-            </ul>
-          </div>
-          <div class="card no-tilt reveal">
-            <h3>Advanced Network Services</h3>
-            <p>DNSSEC, DoH/DoT and site-to-site MPLS VPN.</p>
-            <ul>
-              <li>Secure DNS with DNSSEC &amp; DoH</li>
-              <li>MPLS : VRF, MP-BGP, labels</li>
-            </ul>
-          </div>
-          <div class="card no-tilt reveal">
-            <h3>Project Management &amp; Docs</h3>
-            <p>Reporting, collaborative tools, video editing.</p>
-            <ul>
-              <li>SAE3.02 report &amp; demo video</li>
-              <li>Tools : GitBook, Mahara, Notion</li>
-            </ul>
-          </div>
-          <div class="card no-tilt reveal">
-            <h3>Internship – Adista</h3>
-            <p>2-month placement on enterprise infrastructure.</p>
-            <ul>
-              <li>Routers : Proxy-ARP, BGP, HSRP</li>
-              <li>FTTH, Fortinet firewalls</li>
-              <li>RADIUS, TACACS, monitoring</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="parcours" class="reveal">
-      <div class="container">
-        <h2>Resume</h2>
-        <div class="grid grid-2">
-          <div class="card no-tilt reveal">
-            <h3>Curriculum Vitae – English</h3>
-            <p><a href="docs/CHOUFFAI Omar EN.pdf" target="_blank" rel="noopener">Look at my CV (FR)</a></p>
-          </div>
-          <div class="card no-tilt reveal">
-            <h3>Curriculum Vitae – French</h3>
-            <p><a href="docs/CHOUFFAI Omar FR.pdf" target="_blank" rel="noopener">Look at my CV (EN)</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MODULES -->
-    <section id="ue" class="reveal">
-      <div class="container">
-        <h2>Modules&nbsp;&amp;&nbsp;SAE Projects</h2>
-        <div class="grid grid-3">
-          <a href="ue-x1-en.html" class="card reveal">
-            <h3>UE&nbsp;x.1 [Admin]</h3>
-            <p>Administer networks &amp; the Internet</p>
-            <ul>
-              <li>SAÉ1.01 IT hygiene awareness</li>
-              <li>SAÉ1.02 Intro to networking</li>
-              <li>SAE2.05 Portfolio</li>
-              <li>SAE3.Cyber.03 secure multisite network</li>
-              <li>SAE5.01_FA_et_DevFI - Design, implement, and present a technical solution</li>
-            </ul>
-          </a>
-
-          <a href="ue-x2-en.html" class="card reveal">
-            <h3>UE&nbsp;x.2 [Connect]</h3>
-            <p>Connect companies &amp; users</p>
-            <ul>
-              <li>SAÉ1.03 Discover a transmission device</li>
-              <li>SAE2.02 Measure &amp; characterise a signal</li>
-              <li>SAE3.01 Transmission system</li>
-            </ul>
-          </a>
-
-          <a href="ue-x3-en.html" class="card reveal">
-            <h3>UE&nbsp;x.3 [Program]</h3>
-            <p>Create tools &amp; apps for N&amp;T</p>
-            <ul>
-              <li>SAÉ1.04 Online presence</li>
-              <li>SAÉ1.05 Data processing</li>
-              <li>SAÉ2.04 Integrative project</li>
-              <li>SAE3.02 Communicating apps</li>
-              <li>SAE5.02 - Manage an IT project</li>
-            </ul>
-          </a>
-
-          <a href="ue-cyber4-en.html" class="card reveal">
-            <h3>UEX.Cyber.4 [Secure]</h3>
-            <p>Secure an information system</p>
-            <ul><li>SAE3.Cyber.04 – Pentest basics</li></ul>
-            <li><ul>SAE4.Cyber.01 - Secure an information system</li></ul>
-          </a>
-
-          <a href="ue-cyber5-en.html" class="card reveal">
-            <h3>UEX.Cyber.5 [Monitor]</h3>
-            <p>Monitor an information system</p>
-            <ul><li>SAE3.Cyber.04 – Pentest overview</li></ul>
-            <ul><li>SAE5.Cyber.03_FA - Ensure advanced security and supervision of an information system</li></ul>
-          </a>
-
-          <a href="documents-en.html" class="card reveal">
-            <h3>Digital documents</h3>
-            <ul>
-              <li>Baccalaureate</li>
-              <li>Transcript S1</li>
-              <li>Transcript S2</li>
-              <li>Transcript S3</li>
-              <li>SIP Certification</li>
-            </ul>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="reveal">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>Email&nbsp;: <a href="mailto:omar.chf21@gmail.com">omar.chf21@gmail.com</a></p>
-        <p>LinkedIn&nbsp;: <a href="https://linkedin.com/in/omar-chf/" target="_blank" rel="noopener">linkedin.com/in/omar-chf</a></p>
-      </div>
-    </section>
-
-    <footer class="reveal">
-      <div class="container">
-        <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-  <script src="script.js"></script>
+<section class="hero reveal">
+<div class="container">
+<h1>Portfolio – Omar Chouffai</h1>
+<p>Computer Science &amp; Networks Engineering student at ENSISA, currently completing a systems and network administration apprenticeship. This portfolio presents my Networks &amp; Telecommunications background, cybersecurity, networking and systems projects, and the skills developed through academic and professional experience.</p>
+</div>
+</section>
+<section class="reveal" id="competences">
+<div class="container">
+<h2>Skills &amp; Experience</h2>
+<div class="grid grid-2"><div class="card reveal"><h3>Networks &amp; Infrastructure</h3><p>Administration and security of corporate network infrastructures.</p><ul><li>Routing, VLANs, fiber/FTTH, Fortinet equipment</li><li>802.1X / RADIUS, NPS, Aruba CX</li></ul></div><div class="card reveal"><h3>Systems &amp; Identity</h3><p>Administration of Windows Server environments and enterprise services.</p><ul><li>Active Directory, DNS, DHCP, GPO</li><li>Veeam, Azure AD / Entra ID, ABM</li></ul></div><div class="card reveal"><h3>Cybersecurity</h3><p>Technical auditing, hardening and deployment of security controls.</p><ul><li>Nmap, Metasploit, Responder, CrackMapExec</li><li>AppLocker, penetration testing, vulnerability analysis</li></ul></div><div class="card reveal"><h3>Monitoring &amp; Support</h3><p>Operations, monitoring and incident resolution in production environments.</p><ul><li>Zabbix, Veeam, GLPI</li><li>N2/N3 support and technical documentation</li></ul></div><div class="card reveal"><h3>Automation</h3><p>Automation of administration tasks and business processes.</p><ul><li>Power Automate Desktop / NAV</li><li>Python, network scripting and automation</li></ul></div><div class="card reveal"><h3>Professional Experience</h3><p>Hands-on experience in networking, systems and telecommunications.</p><ul><li>STIHLE – Systems &amp; Networks Apprenticeship</li><li>Trench Group – Systems &amp; Networks Apprenticeship</li><li>ADISTA – Networks &amp; Telecommunications Internship</li></ul></div></div>
+</div>
+</section>
+<section class="reveal" id="parcours">
+<div class="container">
+<h2>Resume</h2>
+<div class="grid grid-2">
+<div class="card no-tilt reveal">
+<h3>Curriculum Vitae – English</h3>
+<p><a href="docs/CV_Omar_CHOUFFAI_FR.pdf" rel="noopener" target="_blank">Look at my CV (FR)</a></p>
+</div>
+<div class="card no-tilt reveal">
+<h3>Curriculum Vitae – French</h3>
+<p><a href="docs/CV_Omar_CHOUFFAI_EN.pdf" rel="noopener" target="_blank">Look at my CV (EN)</a></p>
+</div>
+</div>
+</div>
+</section>
+<!-- MODULES -->
+<section class="reveal" id="ue">
+<div class="container">
+<h2>Modules &amp; SAE Projects</h2>
+<div class="grid grid-3">
+<a class="card reveal" href="ue-x1-en.html">
+<h3>UE x.1 [Admin]</h3>
+<p>Administer networks &amp; the Internet</p>
+<ul><li>SAE1.01 – Cybersecurity awareness and digital hygiene</li><li>SAE1.02 – Introduction to computer networks</li><li>SAE3.Cyber.03 – Design a secure multi-site network</li><li>SAE5.01 – Design, implement and present a technical solution</li></ul>
+</a>
+<a class="card reveal" href="ue-x2-en.html">
+<h3>UE x.2 [Connect]</h3>
+<p>Connect companies &amp; users</p>
+<ul><li>SAE1.03 – Discover a transmission system</li><li>SAE2.02 – Measure and characterize a signal or system</li><li>SAE3.01 – Implement a transmission system</li></ul>
+</a>
+<a class="card reveal" href="ue-x3-en.html">
+<h3>UE x.3 [Program]</h3>
+<p>Create tools &amp; apps for N&amp;T</p>
+<ul><li>SAE1.04 – Present yourself online</li><li>SAE1.05 – Process data</li><li>SAE2.04 – Integrative project</li><li>SAE3.02 – Develop communicating applications</li><li>SAE5.02 – Manage an IT project</li></ul>
+</a>
+<a class="card reveal" href="ue-cyber4-en.html">
+<h3>UEX.Cyber.4 [Secure]</h3>
+<p>Secure an information system</p>
+<ul><li>SAE3.Cyber.04 – Discover penetration testing</li><li>SAE4.Cyber.01 – Secure an information system</li><li>SAE6.Cyber.01 – Respond to a cyberattack</li></ul>
+<li><ul>SAE4.Cyber.01 - Secure an information system</ul></li>
+</a>
+<a class="card reveal" href="ue-cyber5-en.html">
+<h3>UEX.Cyber.5 [Monitor]</h3>
+<p>Monitor an information system</p>
+<ul><li>SAE3.Cyber.04 – Discover penetration testing</li><li>SAE5.Cyber.03 – Advanced information system security and monitoring</li><li>SAE6.Cyber.01 – Respond to a cyberattack</li></ul>
+<ul><li>SAE5.Cyber.03_FA - Ensure advanced security and supervision of an information system</li></ul>
+</a>
+<a class="card reveal" href="documents-en.html">
+<h3>Digital documents</h3>
+<ul><li>Baccalaureate diploma</li><li>Transcripts S1 to S6</li><li>SIP Certification</li></ul>
+</a>
+</div>
+</div>
+</section>
+<!-- CONTACT -->
+<section class="reveal" id="contact">
+<div class="container">
+<h2>Contact</h2>
+<p>Email : <a href="mailto:omar.chf21@gmail.com">omar.chf21@gmail.com</a></p>
+<p>LinkedIn : <a href="https://linkedin.com/in/omar-chf/" rel="noopener" target="_blank">linkedin.com/in/omar-chf</a></p>
+</div>
+</section>
+<footer class="reveal">
+<div class="container">
+<p>© 2026 Omar Chouffai. All rights reserved.</p>
+</div>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
