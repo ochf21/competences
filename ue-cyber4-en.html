@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <script>
+<meta charset="utf-8"/>
+<script>
   (function () {
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
@@ -14,136 +15,119 @@
     }
   })();
   </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UEX.Cyber.4 – Secure an IS | Omar Chouffai</title>
-  <link rel="stylesheet" href="style.css">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>UEX.Cyber.4 – Secure an IS | Omar Chouffai</title>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <div id="scroll-progress"></div>
-  <div id="custom-cursor"></div>
-
-  <div id="main-content">
-    <header>
-      <div class="container nav-open-toggle">
-        <span class="logo">Omar Chouffai</span>
-        <nav>
-          <a href="index-en.html">← Back to Modules</a>
-          <a href="ue-cyber5-en.html">Next Module →</a>
-        </nav>
-        <div class="header-controls">
-          <div class="theme-switch-container">
-            <input type="checkbox" id="theme-checkbox">
-            <label for="theme-checkbox" class="label">
-              <span class="icon-sun">🌞</span>
-              <span class="icon-moon">🌜</span>
-            </label>
-          </div>
-          <span class="nav-toggle">☰</span>
-        </div>
-      </div>
-    </header>
-
-    <section class="hero reveal">
-      <div class="container">
-        <h1>UE3.Cyber.4 – Secure an Information System</h1>
-        <p>
+<div id="scroll-progress"></div>
+<div id="custom-cursor"></div>
+<div id="main-content">
+<header>
+<div class="container nav-open-toggle">
+<span class="logo">Omar Chouffai</span>
+<nav>
+<a href="index-en.html">← Back to Modules</a>
+<a href="ue-cyber5-en.html">Next Module →</a>
+</nav>
+<div class="header-controls">
+<div class="theme-switch-container">
+<input id="theme-checkbox" type="checkbox"/>
+<label class="label" for="theme-checkbox">
+<span class="icon-sun">🌞</span>
+<span class="icon-moon">🌜</span>
+</label>
+</div>
+<span class="nav-toggle">☰</span>
+</div>
+</div>
+</header>
+<section class="hero reveal">
+<div class="container">
+<h1>UE3.Cyber.4 – Secure an Information System</h1>
+<p>
           This module trained us to detect, analyze, and remediate vulnerabilities: creating intrusion scenarios, applying countermeasures, and writing audit reports; all based on core components CE4.01 to CE4.05.
         </p>
-      </div>
-    </section>
-
-    <section class="reveal">
-      <div class="container">
-        <div class="grid grid-2">
-
-          <!-- SAE3.Cyber.04 -->
-          <div class="card no-tilt reveal">
-            <h3>SAE3.Cyber.04 – Discover Pentesting</h3>
-
-            <h4>Objectives</h4>
-            <ul>
-              <li>Understand the process of intrusion auditing: reconnaissance, exploitation, post-exploitation.</li>
-              <li>Get familiar with core tools (nmap, hydra, gobuster, Burp Suite, metasploit).</li>
-            </ul>
-
-            <h4>Activities</h4>
-            <p>During the SAE, we completed:</p>
-            <ul>
-              <li>💡 <strong>26 Root Me challenges</strong> (web, network, crypto) to strengthen our methodology.</li>
-              <li>🛠️ Guided labs: network scan, HTTP brute-force, XSS &amp; SQL injections.</li>
-            </ul>
-
-            <h4>Result</h4>
-            <p>3rd place on the Root Me Academic ranking: <strong>1,470 pts</strong>.</p>
-            <img src="images/rootme-academique.png" alt="Root Me Score" class="card-image">
-
-            <h4>Skills Gained</h4>
-            <ul>
-              <li>Information gathering and mapping an information system.</li>
-              <li>Exploiting common vulnerabilities (OWASP Top 10).</li>
-              <li>Writing audit reports and recommendations.</li>
-            </ul>
-          </div>
-
-          <!-- SAE4.Cyber.01 -->
-          <div class="card no-tilt reveal">
-            <h3>SAE4.Cyber.01 – Secure an Information System</h3>
-
-            <h4>Objectives</h4>
-            <ul>
-              <li>Deploy and secure a complete network infrastructure</li>
-              <li>Set up critical services with high availability</li>
-              <li>Implement a Public Key Infrastructure (PKI)</li>
-              <li>Configure directory and authentication services</li>
-            </ul>
-
-            <h4>Deployed Services</h4>
-            <p>During this project, we deployed the following services:</p>
-            <ul>
-              <li>🌐 <strong>Secure DNS (BIND9)</strong>: configuration of forward and reverse DNS zones</li>
-              <li>🔐 <strong>Complete PKI</strong>: creation of root, server, and client certificates</li>
-              <li>📁 <strong>Secure LDAP directory</strong>: centralized authentication with LDAPs (TLS)</li>
-              <li>🔒 <strong>OpenVPN</strong>: secure remote access with routing and filtering</li>
-              <li>📂 <strong>NFS with PAM authentication</strong>: secure file sharing</li>
-              <li>🌍 <strong>High-availability Web server</strong>: Apache2/Nginx with load balancing and HTTPS</li>
-              <li>📧 <strong>Secure email system</strong>: Postfix (SMTP) + Dovecot (IMAP) with LDAP authentication</li>
-              <li>🔄 <strong>Authenticating Squid proxy</strong></li>
-            </ul>
-
-            <h4>Technical Skills Acquired</h4>
-            <ul>
-              <li>Network architecture: IP addressing plan, advanced routing, filtering rules</li>
-              <li>Virtualization: creation and management of Debian Linux VMs on VirtualBox</li>
-              <li>Security: implementation of TLS/SSL encryption across all services</li>
-              <li>High availability: configuration of redundant services</li>
-              <li>Analysis: reading and interpreting system logs</li>
-            </ul>
-
-            <h4>Presentation and Evaluation</h4>
-            <p>10-minute technical presentation (5 min + 5 min Q&A) including:</p>
-            <ul>
-              <li>Video demonstration of deployed services</li>
-              <li>Detailed network architecture diagrams</li>
-              <li>Justification of technical choices</li>
-              <li>Security risk assessment</li>
-            </ul>
-
-            <h4>Result</h4>
-            <p>Successful deployment of a complete and secure infrastructure, demonstrating mastery of critical network services and security best practices.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <footer class="reveal">
-      <div class="container">
-        <p>&copy;&nbsp;2025 Omar Chouffai. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-  <script src="script.js"></script>
+</div>
+</section>
+<section class="reveal">
+<div class="container">
+<div class="grid grid-2">
+<!-- SAE3.Cyber.04 -->
+<div class="card no-tilt reveal">
+<h3>SAE3.Cyber.04 – Discover Pentesting</h3>
+<h4>Objectives</h4>
+<ul>
+<li>Understand the process of intrusion auditing: reconnaissance, exploitation, post-exploitation.</li>
+<li>Get familiar with core tools (nmap, hydra, gobuster, Burp Suite, metasploit).</li>
+</ul>
+<h4>Activities</h4>
+<p>During the SAE, we completed:</p>
+<ul>
+<li>💡 <strong>26 Root Me challenges</strong> (web, network, crypto) to strengthen our methodology.</li>
+<li>🛠️ Guided labs: network scan, HTTP brute-force, XSS &amp; SQL injections.</li>
+</ul>
+<h4>Result</h4>
+<p>3rd place on the Root Me Academic ranking: <strong>1,470 pts</strong>.</p>
+<img alt="Root Me Score" class="card-image" src="images/rootme-academique.png"/>
+<h4>Skills Gained</h4>
+<ul>
+<li>Information gathering and mapping an information system.</li>
+<li>Exploiting common vulnerabilities (OWASP Top 10).</li>
+<li>Writing audit reports and recommendations.</li>
+</ul>
+</div>
+<!-- SAE4.Cyber.01 -->
+<div class="card no-tilt reveal">
+<h3>SAE4.Cyber.01 – Secure an Information System</h3>
+<h4>Objectives</h4>
+<ul>
+<li>Deploy and secure a complete network infrastructure</li>
+<li>Set up critical services with high availability</li>
+<li>Implement a Public Key Infrastructure (PKI)</li>
+<li>Configure directory and authentication services</li>
+</ul>
+<h4>Deployed Services</h4>
+<p>During this project, we deployed the following services:</p>
+<ul>
+<li>🌐 <strong>Secure DNS (BIND9)</strong>: configuration of forward and reverse DNS zones</li>
+<li>🔐 <strong>Complete PKI</strong>: creation of root, server, and client certificates</li>
+<li>📁 <strong>Secure LDAP directory</strong>: centralized authentication with LDAPs (TLS)</li>
+<li>🔒 <strong>OpenVPN</strong>: secure remote access with routing and filtering</li>
+<li>📂 <strong>NFS with PAM authentication</strong>: secure file sharing</li>
+<li>🌍 <strong>High-availability Web server</strong>: Apache2/Nginx with load balancing and HTTPS</li>
+<li>📧 <strong>Secure email system</strong>: Postfix (SMTP) + Dovecot (IMAP) with LDAP authentication</li>
+<li>🔄 <strong>Authenticating Squid proxy</strong></li>
+</ul>
+<h4>Technical Skills Acquired</h4>
+<ul>
+<li>Network architecture: IP addressing plan, advanced routing, filtering rules</li>
+<li>Virtualization: creation and management of Debian Linux VMs on VirtualBox</li>
+<li>Security: implementation of TLS/SSL encryption across all services</li>
+<li>High availability: configuration of redundant services</li>
+<li>Analysis: reading and interpreting system logs</li>
+</ul>
+<h4>Presentation and Evaluation</h4>
+<p>10-minute technical presentation (5 min + 5 min Q&amp;A) including:</p>
+<ul>
+<li>Video demonstration of deployed services</li>
+<li>Detailed network architecture diagrams</li>
+<li>Justification of technical choices</li>
+<li>Security risk assessment</li>
+</ul>
+<h4>Result</h4>
+<p>Successful deployment of a complete and secure infrastructure, demonstrating mastery of critical network services and security best practices.</p>
+</div>
+<div class="card no-tilt reveal"><h3>SAE6.Cyber.01 – Respond to a cyberattack</h3><p class="small">SAE from the national curriculum – evidence to be added</p><h4>National curriculum objectives</h4><ul><li>Identify an attack and its impact</li><li>Stop its propagation and neutralize it</li><li>Collect and preserve evidence</li><li>Carry out initial investigations</li></ul><h4>Evidence</h4><p>To be completed when deliverables, screenshots or reports are available.</p></div></div>
+</div>
+</section>
+<footer class="reveal">
+<div class="container">
+<p>© 2026 Omar Chouffai. All rights reserved.</p>
+</div>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
