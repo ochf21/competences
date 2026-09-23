@@ -284,3 +284,277 @@ body.lang-en .flag-fr{ opacity:0; }
 body.lang-en .flag-en{ opacity:1; }
 
 
+
+/* ============================================================
+   Aperçu d'images façon macOS
+   Toute image .card-image devient cliquable et s'ouvre dans
+   une fenêtre déplaçable avec boutons fermer / réduire / agrandir.
+   ============================================================ */
+.card-image {
+  cursor: zoom-in;
+}
+
+.mac-preview-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: block;
+  background: rgba(8, 12, 20, 0.52);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .22s ease, visibility .22s ease, background .22s ease;
+}
+
+.mac-preview-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mac-preview-backdrop.is-minimized {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  pointer-events: none;
+}
+
+.mac-preview-window {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: min(900px, 78vw);
+  height: min(680px, 78vh);
+  min-width: 360px;
+  min-height: 260px;
+  transform: translate(-50%, -50%) scale(.94);
+  background: rgba(246, 246, 248, .96);
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 85px rgba(0, 0, 0, .42), 0 2px 10px rgba(0,0,0,.16);
+  opacity: 0;
+  transition: opacity .22s ease, transform .22s cubic-bezier(.2,.8,.2,1),
+              width .25s ease, height .25s ease, left .25s ease, top .25s ease,
+              border-radius .25s ease;
+  pointer-events: auto;
+  user-select: none;
+}
+
+.dark .mac-preview-window {
+  background: rgba(31, 31, 34, .97);
+  border-color: rgba(255, 255, 255, .10);
+}
+
+.mac-preview-backdrop.is-open .mac-preview-window {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.mac-preview-window.is-dragged {
+  transform: none !important;
+}
+
+.mac-preview-window.is-maximized {
+  left: 18px !important;
+  top: 18px !important;
+  width: calc(100vw - 36px) !important;
+  height: calc(100vh - 36px) !important;
+  min-width: 0;
+  min-height: 0;
+  transform: none !important;
+  border-radius: 12px;
+}
+
+.mac-preview-window.is-minimizing {
+  opacity: 0;
+  transform: translate(-50%, 42vh) scale(.16) !important;
+}
+
+.mac-preview-backdrop.is-minimized .mac-preview-window {
+  display: none;
+}
+
+.mac-preview-titlebar {
+  height: 48px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 92px;
+  background: rgba(232, 232, 234, .95);
+  border-bottom: 1px solid rgba(0, 0, 0, .10);
+  cursor: default;
+  touch-action: none;
+}
+
+.dark .mac-preview-titlebar {
+  background: rgba(47, 47, 51, .98);
+  border-bottom-color: rgba(255, 255, 255, .08);
+}
+
+.mac-preview-title {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 600 13px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  color: #34343a;
+  pointer-events: none;
+}
+
+.dark .mac-preview-title { color: #f2f2f3; }
+
+.mac-preview-controls {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.mac-preview-control {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 .5px rgba(0,0,0,.14);
+}
+
+.mac-preview-control.close { background: #ff5f57; }
+.mac-preview-control.minimize { background: #febc2e; }
+.mac-preview-control.maximize { background: #28c840; }
+
+.mac-preview-control::after {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  color: rgba(30,30,30,.75);
+  font: 900 9px/13px Arial, sans-serif;
+  transition: opacity .12s ease;
+}
+.mac-preview-controls:hover .mac-preview-control::after { opacity: 1; }
+.mac-preview-control.close::after { content: "×"; font-size: 11px; }
+.mac-preview-control.minimize::after { content: "−"; font-size: 11px; transform: translateY(-1px); }
+.mac-preview-control.maximize::after { content: "↗"; font-size: 8px; }
+
+.mac-preview-content {
+  height: calc(100% - 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(45deg, rgba(0,0,0,.018) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.018) 75%),
+    linear-gradient(45deg, rgba(0,0,0,.018) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.018) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.dark .mac-preview-content {
+  background: #1b1b1e;
+}
+
+.mac-preview-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 8px 26px rgba(0,0,0,.20);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.mac-preview-dock {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%) translateY(20px) scale(.94);
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(520px, calc(100vw - 28px));
+  padding: 7px 12px 7px 8px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 14px;
+  background: rgba(235,235,238,.82);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+  box-shadow: 0 12px 35px rgba(0,0,0,.24);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  cursor: pointer;
+}
+
+.dark .mac-preview-dock {
+  background: rgba(47,47,51,.82);
+  border-color: rgba(255,255,255,.12);
+}
+
+.mac-preview-dock.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.mac-preview-dock img {
+  width: 42px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.mac-preview-dock span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 600 12px/1.2 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  color: #33343a;
+}
+.dark .mac-preview-dock span { color: #f2f2f3; }
+
+body.mac-preview-open {
+  overflow: hidden;
+}
+body.mac-preview-minimized {
+  overflow: auto;
+}
+
+@media (max-width: 700px) {
+  .mac-preview-window {
+    width: calc(100vw - 20px);
+    height: min(76vh, 620px);
+    min-width: 0;
+    min-height: 0;
+    border-radius: 12px;
+  }
+  .mac-preview-window.is-maximized {
+    left: 5px !important;
+    top: 5px !important;
+    width: calc(100vw - 10px) !important;
+    height: calc(100vh - 10px) !important;
+  }
+  .mac-preview-titlebar { padding: 0 72px; }
+  .mac-preview-content { padding: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mac-preview-backdrop,
+  .mac-preview-window,
+  .mac-preview-dock { transition: none !important; }
+}
