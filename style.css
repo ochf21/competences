@@ -558,3 +558,142 @@ body.mac-preview-minimized {
   .mac-preview-window,
   .mac-preview-dock { transition: none !important; }
 }
+
+/* ============================================================
+   Contrôles de zoom pour l'aperçu macOS
+   ============================================================ */
+.mac-preview-content {
+  position: relative;
+}
+
+.mac-preview-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  touch-action: none;
+}
+
+.mac-preview-canvas.is-zoomed {
+  cursor: grab;
+}
+
+.mac-preview-canvas.is-panning {
+  cursor: grabbing;
+}
+
+.mac-preview-canvas.is-panning .mac-preview-image {
+  cursor: grabbing;
+}
+
+.mac-preview-image {
+  transform-origin: center center;
+  transition: transform .16s ease;
+  will-change: transform;
+  cursor: zoom-in;
+}
+
+.mac-preview-canvas.is-zoomed .mac-preview-image {
+  cursor: grab;
+}
+
+.mac-preview-canvas.is-panning .mac-preview-image {
+  transition: none;
+}
+
+.mac-preview-zoom-toolbar {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 6px;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 14px;
+  background: rgba(239,239,242,.84);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  backdrop-filter: blur(16px) saturate(145%);
+  box-shadow: 0 8px 26px rgba(0,0,0,.18);
+}
+
+.dark .mac-preview-zoom-toolbar {
+  background: rgba(48,48,52,.82);
+  border-color: rgba(255,255,255,.12);
+}
+
+.mac-zoom-btn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: rgba(255,255,255,.74);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+  color: #303036;
+  font: 600 20px/1 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, opacity .12s ease;
+}
+
+.dark .mac-zoom-btn {
+  background: rgba(255,255,255,.10);
+  color: #f4f4f5;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+.mac-zoom-btn:hover:not(:disabled) {
+  transform: scale(1.06);
+  background: rgba(255,255,255,.96);
+}
+
+.dark .mac-zoom-btn:hover:not(:disabled) {
+  background: rgba(255,255,255,.17);
+}
+
+.mac-zoom-btn:active:not(:disabled) {
+  transform: scale(.95);
+}
+
+.mac-zoom-btn:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.mac-zoom-btn.zoom-reset {
+  font-size: 17px;
+}
+
+.mac-zoom-value {
+  min-width: 40px;
+  padding: 2px 3px;
+  text-align: center;
+  color: #46464d;
+  font: 600 10px/1.2 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  user-select: none;
+}
+
+.dark .mac-zoom-value {
+  color: #e8e8ea;
+}
+
+@media (max-width: 700px) {
+  .mac-preview-zoom-toolbar {
+    left: 8px;
+    padding: 6px 5px;
+    gap: 5px;
+  }
+
+  .mac-zoom-btn {
+    width: 30px;
+    height: 30px;
+  }
+}
