@@ -151,7 +151,15 @@ langChk.addEventListener('change', () => {
         <div class="mac-preview-title"></div>
       </div>
       <div class="mac-preview-content">
-        <img class="mac-preview-image" alt="">
+        <div class="mac-preview-zoom-toolbar" aria-label="Contrôles de zoom">
+          <button class="mac-zoom-btn zoom-in" type="button" aria-label="Zoomer" title="Zoomer">+</button>
+          <div class="mac-zoom-value" aria-live="polite">100%</div>
+          <button class="mac-zoom-btn zoom-out" type="button" aria-label="Dézoomer" title="Dézoomer">−</button>
+          <button class="mac-zoom-btn zoom-reset" type="button" aria-label="Réinitialiser le zoom" title="Réinitialiser">↺</button>
+        </div>
+        <div class="mac-preview-canvas">
+          <img class="mac-preview-image" alt="">
+        </div>
       </div>
     </div>`;
 
@@ -168,6 +176,11 @@ langChk.addEventListener('change', () => {
   const titlebar = backdrop.querySelector('.mac-preview-titlebar');
   const title = backdrop.querySelector('.mac-preview-title');
   const preview = backdrop.querySelector('.mac-preview-image');
+  const canvas = backdrop.querySelector('.mac-preview-canvas');
+  const zoomInBtn = backdrop.querySelector('.zoom-in');
+  const zoomOutBtn = backdrop.querySelector('.zoom-out');
+  const zoomResetBtn = backdrop.querySelector('.zoom-reset');
+  const zoomValue = backdrop.querySelector('.mac-zoom-value');
   const closeBtn = backdrop.querySelector('.close');
   const minBtn = backdrop.querySelector('.minimize');
   const maxBtn = backdrop.querySelector('.maximize');
@@ -179,6 +192,49 @@ langChk.addEventListener('change', () => {
   let isMinimized = false;
   let previousBounds = null;
   let drag = null;
+  let zoom = 1;
+  let panX = 0;
+  let panY = 0;
+  let imageDrag = null;
+
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+  const updateZoomUI = () => {
+    zoomValue.textContent = `${Math.round(zoom * 100)}%`;
+    preview.style.transform = `translate(${panX}px, ${panY}px) scale(${zoom})`;
+    canvas.classList.toggle('is-zoomed', zoom > 1.001);
+    zoomOutBtn.disabled = zoom <= 0.5;
+    zoomInBtn.disabled = zoom >= 4;
+  };
+
+  const resetZoom = () => {
+    zoom = 1;
+    panX = 0;
+    panY = 0;
+    imageDrag = null;
+    updateZoomUI();
+  };
+
+  const setZoom = (nextZoom, originX = null, originY = null) => {
+    const oldZoom = zoom;
+    zoom = clamp(nextZoom, 0.5, 4);
+
+    // Conserve approximativement le point sous le curseur lors du zoom à la molette.
+    if (originX !== null && originY !== null && oldZoom !== zoom) {
+      const rect = canvas.getBoundingClientRect();
+      const cx = originX - rect.left - rect.width / 2;
+      const cy = originY - rect.top - rect.height / 2;
+      const ratio = zoom / oldZoom;
+      panX = (panX - cx) * ratio + cx;
+      panY = (panY - cy) * ratio + cy;
+    }
+
+    if (zoom <= 1) {
+      panX = 0;
+      panY = 0;
+    }
+    updateZoomUI();
+  };
 
   const getImageTitle = (img) => {
     const cardTitle = img.closest('.card')?.querySelector('h3')?.textContent?.trim();
@@ -205,6 +261,7 @@ langChk.addEventListener('change', () => {
     dockTitle.textContent = imageTitle;
 
     resetWindowPosition();
+    resetZoom();
     isOpen = true;
     isMinimized = false;
     backdrop.classList.remove('is-minimized');
@@ -230,6 +287,7 @@ langChk.addEventListener('change', () => {
         preview.removeAttribute('src');
         dockImg.removeAttribute('src');
         resetWindowPosition();
+        resetZoom();
       }
     }, 230);
   };
@@ -309,6 +367,67 @@ langChk.addEventListener('change', () => {
         openPreview(img);
       }
     });
+  });
+
+
+  zoomInBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setZoom(zoom + 0.25);
+  });
+
+  zoomOutBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setZoom(zoom - 0.25);
+  });
+
+  zoomResetBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    resetZoom();
+  });
+
+  // Ctrl/Cmd + molette ou simple molette dans l'aperçu pour zoomer rapidement.
+  canvas.addEventListener('wheel', (e) => {
+    if (!isOpen) return;
+    e.preventDefault();
+    const step = e.deltaY < 0 ? 0.15 : -0.15;
+    setZoom(zoom + step, e.clientX, e.clientY);
+  }, { passive: false });
+
+  // Quand l'image est agrandie, on peut la déplacer comme dans Aperçu sur macOS.
+  preview.addEventListener('pointerdown', (e) => {
+    if (zoom <= 1 || e.button !== 0) return;
+    imageDrag = {
+      pointerId: e.pointerId,
+      startX: e.clientX,
+      startY: e.clientY,
+      panX,
+      panY
+    };
+    preview.setPointerCapture?.(e.pointerId);
+    canvas.classList.add('is-panning');
+    e.preventDefault();
+  });
+
+  preview.addEventListener('pointermove', (e) => {
+    if (!imageDrag || e.pointerId !== imageDrag.pointerId) return;
+    panX = imageDrag.panX + (e.clientX - imageDrag.startX);
+    panY = imageDrag.panY + (e.clientY - imageDrag.startY);
+    updateZoomUI();
+  });
+
+  const stopImageDrag = (e) => {
+    if (!imageDrag || (e.pointerId != null && e.pointerId !== imageDrag.pointerId)) return;
+    try { preview.releasePointerCapture?.(imageDrag.pointerId); } catch (_) {}
+    imageDrag = null;
+    canvas.classList.remove('is-panning');
+  };
+
+  preview.addEventListener('pointerup', stopImageDrag);
+  preview.addEventListener('pointercancel', stopImageDrag);
+  preview.addEventListener('dblclick', (e) => {
+    e.stopPropagation();
+    if (zoom > 1) resetZoom();
+    else setZoom(2);
   });
 
   closeBtn.addEventListener('click', (e) => {
