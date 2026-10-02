@@ -151,6 +151,9 @@ langChk.addEventListener('change', () => {
         <div class="mac-preview-title"></div>
       </div>
       <div class="mac-preview-content">
+        <button class="mac-preview-gallery-nav gallery-prev" type="button" aria-label="Précédent" title="Précédent">‹</button>
+        <button class="mac-preview-gallery-nav gallery-next" type="button" aria-label="Suivant" title="Suivant">›</button>
+        <div class="mac-preview-gallery-counter" aria-live="polite"></div>
         <div class="mac-preview-zoom-toolbar" aria-label="Contrôles de zoom">
           <button class="mac-zoom-btn zoom-in" type="button" aria-label="Zoomer" title="Zoomer">+</button>
           <div class="mac-zoom-value" aria-live="polite">100%</div>
@@ -181,6 +184,9 @@ langChk.addEventListener('change', () => {
   const zoomOutBtn = backdrop.querySelector('.zoom-out');
   const zoomResetBtn = backdrop.querySelector('.zoom-reset');
   const zoomValue = backdrop.querySelector('.mac-zoom-value');
+  const galleryPrevBtn = backdrop.querySelector('.gallery-prev');
+  const galleryNextBtn = backdrop.querySelector('.gallery-next');
+  const galleryCounter = backdrop.querySelector('.mac-preview-gallery-counter');
   const closeBtn = backdrop.querySelector('.close');
   const minBtn = backdrop.querySelector('.minimize');
   const maxBtn = backdrop.querySelector('.maximize');
@@ -193,6 +199,8 @@ langChk.addEventListener('change', () => {
   let previousBounds = null;
   let drag = null;
   let zoom = 1;
+  let galleryItems = [];
+  let galleryIndex = 0;
   let panX = 0;
   let panY = 0;
   let imageDrag = null;
@@ -251,17 +259,54 @@ langChk.addEventListener('change', () => {
     isMaximized = false;
   };
 
-  const openPreview = (img) => {
-    const imageTitle = getImageTitle(img);
-    preview.src = img.currentSrc || img.src;
-    preview.alt = img.alt || imageTitle;
+  const updateGalleryControls = () => {
+    const hasGallery = galleryItems.length > 1;
+    galleryPrevBtn.classList.toggle('is-visible', hasGallery);
+    galleryNextBtn.classList.toggle('is-visible', hasGallery);
+    galleryCounter.classList.toggle('is-visible', hasGallery);
+    galleryPrevBtn.disabled = !hasGallery || galleryIndex <= 0;
+    galleryNextBtn.disabled = !hasGallery || galleryIndex >= galleryItems.length - 1;
+    galleryCounter.textContent = hasGallery ? `${galleryIndex + 1} / ${galleryItems.length}` : '';
+  };
+
+  const showGalleryItem = (index) => {
+    if (!galleryItems.length) return;
+    galleryIndex = clamp(index, 0, galleryItems.length - 1);
+    const item = galleryItems[galleryIndex];
+    const imageTitle = item.title || 'Aperçu';
+    preview.src = item.src;
+    preview.alt = item.alt || imageTitle;
     title.textContent = imageTitle;
-    dockImg.src = img.currentSrc || img.src;
+    dockImg.src = item.src;
     dockImg.alt = '';
     dockTitle.textContent = imageTitle;
+    resetZoom();
+    updateGalleryControls();
+  };
+
+  const openPreview = (img) => {
+    const gallery = img.closest('.document-gallery');
+
+    if (gallery) {
+      galleryItems = Array.from(gallery.querySelectorAll('[data-preview-item]')).map((item) => ({
+        src: item.currentSrc || item.src,
+        alt: item.alt || '',
+        title: item.dataset.previewTitle || getImageTitle(item)
+      }));
+      galleryIndex = Math.max(0, Array.from(gallery.querySelectorAll('[data-preview-item]')).indexOf(img));
+    } else {
+      const imageTitle = getImageTitle(img);
+      galleryItems = [{
+        src: img.currentSrc || img.src,
+        alt: img.alt || imageTitle,
+        title: imageTitle
+      }];
+      galleryIndex = 0;
+    }
+
+    showGalleryItem(galleryIndex);
 
     resetWindowPosition();
-    resetZoom();
     isOpen = true;
     isMinimized = false;
     backdrop.classList.remove('is-minimized');
@@ -286,6 +331,9 @@ langChk.addEventListener('change', () => {
       if (!isOpen && !isMinimized) {
         preview.removeAttribute('src');
         dockImg.removeAttribute('src');
+        galleryItems = [];
+        galleryIndex = 0;
+        updateGalleryControls();
         resetWindowPosition();
         resetZoom();
       }
@@ -369,6 +417,16 @@ langChk.addEventListener('change', () => {
     });
   });
 
+
+  galleryPrevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (galleryIndex > 0) showGalleryItem(galleryIndex - 1);
+  });
+
+  galleryNextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (galleryIndex < galleryItems.length - 1) showGalleryItem(galleryIndex + 1);
+  });
 
   zoomInBtn.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -509,6 +567,18 @@ langChk.addEventListener('change', () => {
   titlebar.addEventListener('pointercancel', stopDrag);
 
   document.addEventListener('keydown', (e) => {
+    if (isOpen && galleryItems.length > 1) {
+      if (e.key === 'ArrowRight' && galleryIndex < galleryItems.length - 1) {
+        e.preventDefault();
+        showGalleryItem(galleryIndex + 1);
+        return;
+      }
+      if (e.key === 'ArrowLeft' && galleryIndex > 0) {
+        e.preventDefault();
+        showGalleryItem(galleryIndex - 1);
+        return;
+      }
+    }
     if (e.key === 'Escape' && (isOpen || isMinimized)) closePreview();
   });
 
